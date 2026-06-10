@@ -12,6 +12,15 @@ This repository currently contains the reference corpus, image/OCR ingestion aud
 - `github/`: GitHub-ready initiatives, epics, features, stories, and CSV import datasets
 - `architecture/`: top-level architecture mirrors
 
+## Governance Gates
+
+- `docs/traceability/SourceTraceabilityMatrix.md`: source-to-story traceability.
+- `docs/research/KnowledgeGraph.md`: concept dependency graph.
+- `docs/validation/ArchitectureReadinessReport.md`: architecture completion gate.
+- `docs/validation/GapAnalysis.md`: mandatory gap closure.
+- `docs/validation/StoryCoverageReport.md`: story coverage proof.
+- `docs/validation/SourceCoverageReport.md`: source coverage proof.
+
 ## Source Of Truth
 
 The reference PDFs and research audit artifacts are the knowledge core of the application. Implementation should begin only after stories are reviewed and prioritized.
