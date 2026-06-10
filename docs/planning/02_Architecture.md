@@ -9,3 +9,9 @@ Architecture rule: no signal, model, order, or risk decision is accepted without
 Architecture completion rule: no architecture document is final until source traceability, knowledge graph coverage, story coverage, source coverage, and architecture readiness reports prove that every extracted concept has a mapped architecture component and backlog home.
 
 Mandatory architecture modules: Research Workbench, Feature Store, Strategy Registry, Market Regime, Fundamental Analysis, Technical Analysis, Institutional Flow, and Global Macro.
+
+Architecture generation and validation must be separated:
+
+- Use `docs/planning/ArchitectureMasterPrompt.md` for architecture generation.
+- Use `docs/planning/ArchitectureValidationPrompt.md` after generation.
+- Follow `docs/planning/ArchitectureWorkflow.md` for the project sequence.

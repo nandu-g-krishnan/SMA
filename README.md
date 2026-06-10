@@ -20,6 +20,9 @@ This repository currently contains the reference corpus, image/OCR ingestion aud
 - `docs/validation/GapAnalysis.md`: mandatory gap closure.
 - `docs/validation/StoryCoverageReport.md`: story coverage proof.
 - `docs/validation/SourceCoverageReport.md`: source coverage proof.
+- `docs/planning/ArchitectureMasterPrompt.md`: architecture-generation prompt.
+- `docs/planning/ArchitectureValidationPrompt.md`: post-generation validation prompt.
+- `docs/planning/ArchitectureWorkflow.md`: required PDF-to-implementation workflow.
 
 ## Source Of Truth
 
