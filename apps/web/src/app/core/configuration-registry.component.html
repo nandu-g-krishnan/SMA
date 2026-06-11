@@ -1,0 +1,118 @@
+<div class="configuration-registry">
+  <header class="registry-header">
+    <h2>Configuration Registry</h2>
+    <div class="header-actions">
+      <button class="btn btn-export" (click)="exportConfigurations()">Export</button>
+      <label class="btn btn-import">
+        Import
+        <input type="file" accept=".json" (change)="importConfigurations($event)" hidden>
+      </label>
+    </div>
+  </header>
+
+  <div class="registry-content">
+    <aside class="registry-sidebar">
+      <div class="search-box">
+        <input type="text" placeholder="Search configurations..." 
+               (input)="onSearch($event.target.value)" class="search-input">
+      </div>
+
+      <div class="filter-section">
+        <label>Filter by Type:</label>
+        <button class="filter-btn" (click)="onFilterChange(null)" 
+                [class.active]="!filterType">All</button>
+        <button class="filter-btn" (click)="onFilterChange('string')" 
+                [class.active]="filterType === 'string'">String</button>
+        <button class="filter-btn" (click)="onFilterChange('number')" 
+                [class.active]="filterType === 'number'">Number</button>
+        <button class="filter-btn" (click)="onFilterChange('boolean')" 
+                [class.active]="filterType === 'boolean'">Boolean</button>
+        <button class="filter-btn" (click)="onFilterChange('object')" 
+                [class.active]="filterType === 'object'">Object</button>
+      </div>
+
+      <ul class="config-list">
+        <li *ngFor="let config of displayConfigs" 
+            class="config-item"
+            [class.active]="selectedConfig?.key === config.key"
+            (click)="selectConfiguration(config)">
+          <span class="config-key">{{ config.key }}</span>
+          <span class="config-type">{{ config.type }}</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer" *ngIf="!isLoading">
+        <p>{{ displayConfigs.length }} of {{ configurations.length }} shown</p>
+      </div>
+    </aside>
+
+    <main class="registry-main">
+      <div class="loading-state" *ngIf="isLoading">
+        <p>Loading configurations...</p>
+      </div>
+
+      <div class="empty-state" *ngIf="!isLoading && !selectedConfig">
+        <p>Select a configuration to view details</p>
+      </div>
+
+      <div class="config-detail" *ngIf="!isLoading && selectedConfig">
+        <div class="detail-header">
+          <h3>{{ selectedConfig.key }}</h3>
+          <div class="detail-actions">
+            <button class="btn btn-edit" (click)="editConfiguration(selectedConfig)" 
+                    *ngIf="!editMode && !selectedConfig.readOnly">Edit</button>
+            <button class="btn btn-delete" (click)="deleteConfiguration(selectedConfig)" 
+                    *ngIf="!editMode && !selectedConfig.readOnly">Delete</button>
+          </div>
+        </div>
+
+        <div class="detail-body" *ngIf="!editMode">
+          <div class="detail-field">
+            <label>Type:</label>
+            <span>{{ selectedConfig.type }}</span>
+          </div>
+          <div class="detail-field">
+            <label>Value:</label>
+            <span class="detail-value">{{ selectedConfig.value }}</span>
+          </div>
+          <div class="detail-field" *ngIf="selectedConfig.description">
+            <label>Description:</label>
+            <span>{{ selectedConfig.description }}</span>
+          </div>
+          <div class="detail-field" *ngIf="selectedConfig.lastModified">
+            <label>Last Modified:</label>
+            <span>{{ selectedConfig.lastModified | date:'medium' }}</span>
+          </div>
+        </div>
+
+        <div class="detail-body edit-mode" *ngIf="editMode">
+          <div class="form-group">
+            <label>Key:</label>
+            <input type="text" [(ngModel)]="selectedConfig.key" disabled class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Type:</label>
+            <select [(ngModel)]="selectedConfig.type" class="form-input">
+              <option value="string">String</option>
+              <option value="number">Number</option>
+              <option value="boolean">Boolean</option>
+              <option value="object">Object</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Value:</label>
+            <input type="text" [(ngModel)]="selectedConfig.value" class="form-input">
+          </div>
+          <div class="form-group">
+            <label>Description:</label>
+            <textarea [(ngModel)]="selectedConfig.description" class="form-input form-textarea"></textarea>
+          </div>
+          <div class="edit-actions">
+            <button class="btn btn-save" (click)="saveConfiguration()">Save</button>
+            <button class="btn btn-cancel" (click)="cancelEdit()">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
