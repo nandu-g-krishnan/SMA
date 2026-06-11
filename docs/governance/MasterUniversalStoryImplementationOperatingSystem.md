@@ -612,3 +612,211 @@ No step may be skipped.
 Implementation is not completion.
 
 Validated, tested, secure, audited, traceable completion is completion.
+
+## Additional P0 Rules
+
+These rules are mandatory additions to the operating system and apply to every implementation session.
+
+### P0-A Rule: Repository Reality Check
+
+Before implementation, verify actual repository state.
+
+Read:
+
+- `github/backlog/StoryRegistry.md`
+- `docs/implementation/StoryExecutionDashboard.md`
+- `docs/implementation/ExecutionMetrics.md`
+- `github/ProjectSyncStatus.md`
+
+Verify:
+
+- Story still exists.
+- Story status is Ready.
+- Story is not already completed.
+- Story is not blocked.
+- Dependencies remain satisfied.
+
+Never implement from stale assumptions.
+
+Repository state is authoritative.
+
+### P0-B Rule: Source Document Precedence
+
+Priority order:
+
+1. Source PDF
+2. OCR Extraction
+3. Research Notes
+4. Master Knowledge Base
+5. Architecture
+6. Traceability
+7. Story
+8. Task
+
+If conflicts occur, the higher source wins.
+
+Story text may never override source knowledge.
+
+### P0-C Rule: Master Data Synchronization
+
+Whenever implementation affects indicators, signals, features, strategies, risk controls, AI models, execution rules, or market regimes, verify relevant master catalogs remain synchronized.
+
+Update catalogs if required and generate evidence.
+
+### P0-D Rule: Knowledge Coverage Protection
+
+Implementation must never reduce:
+
+- Knowledge Coverage
+- Architecture Coverage
+- Source Coverage
+- Story Coverage
+- Traceability Coverage
+
+After implementation, regenerate validation reports.
+
+Coverage regressions are failures.
+
+### P0-E Rule: Kite Contract Protection
+
+For Kite-related stories, verify against:
+
+- Kite documentation
+- Kite API Catalog
+- Existing architecture
+
+Validate:
+
+- Authentication
+- Token handling
+- Session expiry
+- Rate limits
+- Retry policies
+- Reconnect handling
+- Error handling
+
+No assumptions allowed.
+
+### P0-F Rule: Feature Store First
+
+No indicator, signal, AI model, or strategy may bypass Feature Store architecture.
+
+If a feature already exists in Feature Store, reuse it.
+
+Do not recalculate independently.
+
+### P0-G Rule: Strategy Safety Rule
+
+No strategy implementation is complete unless:
+
+- Risk controls exist.
+- Regime mapping exists.
+- Backtest requirements exist.
+- Walk-forward requirements exist.
+- Paper-trading requirements exist.
+
+### P0-H Rule: Capital Protection Rule
+
+No implementation may create a live trading path that bypasses:
+
+- Daily loss limits
+- Position sizing controls
+- Exposure limits
+- Circuit breakers
+- Kill switch
+- Risk validation
+
+Capital protection always overrides strategy logic.
+
+### P0-I Rule: Data Quality Rule
+
+For any market-data implementation, validate:
+
+- Missing ticks
+- Duplicate ticks
+- Timezone handling
+- Holiday handling
+- Candle correctness
+- Corporate actions
+- Splits
+- Bonus issues
+
+Data quality failures block closure.
+
+### P0-J Rule: Implementation Evidence Rule
+
+Every story must produce evidence.
+
+Evidence types:
+
+- Build logs
+- Test logs
+- Validation reports
+- Security results
+- Audit results
+- Acceptance results
+- Traceability results
+
+No evidence means no PASS.
+
+### P0-K Rule: Manual Validation Honesty Rule
+
+If environment prevents execution, do not mark PASS.
+
+Generate:
+
+- `docs/validation/ManualValidationRequired.md`
+- `docs/validation/ManualTestChecklist.md`
+
+Provide exact commands and expected outputs.
+
+Never claim successful execution without proof.
+
+### P0-L Rule: Single Story Execution Rule
+
+Implement exactly one story.
+
+Do not automatically start another story.
+
+After closure, stop.
+
+Return:
+
+- Story completed
+- Evidence summary
+- Commit hash
+- GitHub issue status
+- Remaining ready stories
+- New blockers discovered
+
+Wait for next instruction.
+
+### P0-M Rule: Completed Story Immutability
+
+Stories under `github/backlog/Completed/` must be treated as immutable records.
+
+If changes are required, create a new story.
+
+Do not silently reopen or modify completed evidence.
+
+### P0-N Rule: Implementation Authorization Protection
+
+Implementation authorization remains valid only while:
+
+- `ArchitectureBaseline_v1.md` remains LOCKED.
+- Governance reports remain PASS.
+- Coverage reports remain PASS.
+- Traceability remains complete.
+
+If any gate regresses, stop implementation and generate a remediation plan.
+
+## Final Safety Rule
+
+When in doubt:
+
+- Read more source material.
+- Never assume.
+- Never infer unsupported behavior.
+- Never skip validation.
+
+Knowledge correctness is more important than implementation speed.

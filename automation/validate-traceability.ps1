@@ -158,6 +158,20 @@ foreach ($relativePath in $requiredFiles) {
     foreach ($rule in @(
       "Repository Is The Source Of Truth",
       "P0 Rule: Knowledge First",
+      "P0-A Rule: Repository Reality Check",
+      "P0-B Rule: Source Document Precedence",
+      "P0-C Rule: Master Data Synchronization",
+      "P0-D Rule: Knowledge Coverage Protection",
+      "P0-E Rule: Kite Contract Protection",
+      "P0-F Rule: Feature Store First",
+      "P0-G Rule: Strategy Safety Rule",
+      "P0-H Rule: Capital Protection Rule",
+      "P0-I Rule: Data Quality Rule",
+      "P0-J Rule: Implementation Evidence Rule",
+      "P0-K Rule: Manual Validation Honesty Rule",
+      "P0-L Rule: Single Story Execution Rule",
+      "P0-M Rule: Completed Story Immutability",
+      "P0-N Rule: Implementation Authorization Protection",
       "Load Project Governance",
       "Load Execution Dashboard",
       "Generate Implementation Context",
@@ -165,6 +179,8 @@ foreach ($relativePath in $requiredFiles) {
       "Build Validation",
       "Test Validation",
       "Anti-Shortcut Rules",
+      "No evidence means no PASS",
+      "Knowledge correctness is more important than implementation speed",
       "Validated, tested, secure, audited, traceable completion is completion"
     )) {
       if ($content -notmatch [regex]::Escape($rule)) {
