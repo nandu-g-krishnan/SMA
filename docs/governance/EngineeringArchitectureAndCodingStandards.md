@@ -20,6 +20,90 @@ Knowledge
 
 Story text may not override source PDFs, OCR extraction, research notes, Kite documentation, the Master Knowledge Base, architecture baselines, or traceability matrices.
 
+## Token Efficiency Clarification Rule
+
+Status: MANDATORY
+
+Priority: P0
+
+Token efficiency must never reduce:
+
+- Trading correctness
+- Knowledge coverage
+- PDF coverage
+- OCR coverage
+- Visual chart coverage
+- Master data coverage
+- Architecture validation
+- Risk validation
+- Capital protection validation
+- Traceability validation
+- Acceptance validation
+- Security validation
+- AI reasoning quality
+- Strategy quality
+- Market intelligence quality
+
+Token efficiency means reducing:
+
+- Duplicate summaries
+- Repeated architecture dumps
+- Repeated backlog dumps
+- Repeated story inventories
+- Repeated governance documents
+- Repeated validation boilerplate
+- Repeated status reports
+- Repeated file listings
+- Repeated explanations
+
+Token efficiency does not mean skipping:
+
+- PDF review
+- Research review
+- Knowledge validation
+- Master-data validation
+- Architecture review
+- Traceability review
+- Kite documentation review
+- Risk review
+- Security review
+- Acceptance review
+- Implementation review
+
+When implementing a story, always load and use:
+
+- KnowledgeIds
+- MasterKnowledgeBase
+- SourceTraceabilityMatrix
+- ImplementationTraceabilityMatrix
+- Relevant PDFs
+- Relevant OCR outputs
+- Relevant charts
+- Relevant research
+- Relevant architecture documents
+- Relevant catalogs
+
+Knowledge integrity has higher priority than token efficiency.
+
+Prefer fewer words with the same reasoning quality. Never use less reasoning, less validation, or less analysis to save tokens.
+
+Reduce verbosity in reporting. Do not reduce depth in implementation.
+
+Quality hierarchy:
+
+1. Knowledge Integrity
+2. Trading Correctness
+3. Risk Protection
+4. Capital Protection
+5. Architecture Compliance
+6. Traceability
+7. Security
+8. Testing
+9. Documentation
+10. Token Efficiency
+
+Token efficiency is always last. It may optimize reporting. It may never optimize away quality.
+
 ## Product Definition
 
 SMA is a personal AI-assisted quantitative trading operating system for 1-3 users, self-hosted on a single VPS, implemented as a modular monolith with strict module boundaries.
