@@ -46,6 +46,8 @@ $requiredFiles = @(
   "docs/architecture/ArchitectureBaseline_v1.md",
   "docs/architecture/ArchitectureChangeRequest.md",
   "docs/implementation/ImplementationBaseline_v1.md",
+  "docs/implementation/StoryExecutionDashboard.md",
+  "docs/implementation/ExecutionMetrics.md",
   "docs/governance/StoryLifecycleGovernanceRules.md",
   "docs/governance/ImplementationExecutionRules.md",
   "github/backlog/Dependencies.md",
@@ -141,6 +143,43 @@ foreach ($relativePath in $requiredFiles) {
     )) {
       if ($content -notmatch [regex]::Escape($rule)) {
         [Console]::Error.WriteLine("Implementation execution rules are missing rule: $rule")
+        $failed = $true
+      }
+    }
+  }
+
+  if ($relativePath -eq "docs/implementation/StoryExecutionDashboard.md") {
+    foreach ($column in @(
+      "Story Id",
+      "Story Name",
+      "KnowledgeIds",
+      "Implementation Status",
+      "Audit Status",
+      "Security Status",
+      "Acceptance Status",
+      "Traceability Status",
+      "Completion %"
+    )) {
+      if ($content -notmatch [regex]::Escape($column)) {
+        [Console]::Error.WriteLine("Story execution dashboard is missing required column: $column")
+        $failed = $true
+      }
+    }
+  }
+
+  if ($relativePath -eq "docs/implementation/ExecutionMetrics.md") {
+    foreach ($metric in @(
+      "Total Stories",
+      "Completed Stories",
+      "Blocked Stories",
+      "Ready Stories",
+      "Failed Stories",
+      "Coverage %",
+      "Epic Progress",
+      "Initiative Progress"
+    )) {
+      if ($content -notmatch [regex]::Escape($metric)) {
+        [Console]::Error.WriteLine("Execution metrics are missing required metric: $metric")
         $failed = $true
       }
     }
