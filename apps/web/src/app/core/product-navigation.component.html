@@ -1,0 +1,45 @@
+<nav class="product-navigation" [class.expanded]="isExpanded">
+  <div class="nav-header">
+    <button class="toggle-btn" (click)="toggleNavigation()" title="Toggle Navigation">
+      <span class="toggle-icon">☰</span>
+    </button>
+    <h1 class="app-title" *ngIf="isExpanded">SMA</h1>
+  </div>
+
+  <ul class="nav-menu">
+    <li *ngFor="let item of navigationItems" 
+        class="nav-item"
+        [class.active]="isActive(item.route)"
+        [class.has-children]="hasChildren(item)"
+        *ngIf="canAccess(item)">
+      
+      <a *ngIf="!hasChildren(item)" 
+         class="nav-link" 
+         (click)="navigate(item.route, $event)">
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span class="nav-label" *ngIf="isExpanded">{{ item.label }}</span>
+      </a>
+
+      <details *ngIf="hasChildren(item)" [open]="isExpanded">
+        <summary class="nav-link">
+          <span class="nav-icon">{{ item.icon }}</span>
+          <span class="nav-label" *ngIf="isExpanded">{{ item.label }}</span>
+          <span class="expand-icon" *ngIf="isExpanded">▼</span>
+        </summary>
+        
+        <ul class="nav-submenu">
+          <li *ngFor="let child of item.children" class="nav-subitem">
+            <a class="nav-link" (click)="navigate(child.route, $event)">
+              <span class="nav-icon">{{ child.icon }}</span>
+              <span class="nav-label">{{ child.label }}</span>
+            </a>
+          </li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+
+  <div class="nav-footer" *ngIf="isExpanded">
+    <p class="version">v1.0.0</p>
+  </div>
+</nav>
