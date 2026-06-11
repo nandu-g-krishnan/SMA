@@ -38,6 +38,12 @@ Project V2 fields required before Project sync is complete:
 - Paper Trade Verified
 - Live Verified
 - Compliance Status
+
+## Recent Story Closure Sync
+
+| Story Id | Local Exists | GitHub Exists | Project V2 Exists | Sync Status | Reason |
+| --- | --- | --- | --- | --- | --- |
+| I01-E01-F04-S1 | Yes: `github/backlog/Completed/I01-E01-F04-S1.md` | Yes: issue #328 closed | Remote project linkage pending | Closed Locally And Remotely | Story lifecycle gates passed; Project V2 status remains governed by broader remote sync availability |
 - Priority
 - Story Points
 - Status

@@ -19,6 +19,7 @@ builder.Services.AddSingleton<BrokerSessionState>();
 builder.Services.AddSingleton<InstrumentSyncState>();
 builder.Services.AddSingleton<TickStore>();
 builder.Services.AddSingleton<RepositoryBaselineStore>();
+builder.Services.AddSingleton<ReferenceDataModelMonitorStore>();
 
 var app = builder.Build();
 
@@ -77,6 +78,8 @@ app.MapGet("/api/foundation/configuration", (IConfiguration configuration) => Re
 }));
 
 app.MapGet("/api/foundation/repository-baseline", (RepositoryBaselineStore store) => Results.Ok(store.GetBaseline()));
+
+app.MapGet("/api/reference-data/model/monitor", (ReferenceDataModelMonitorStore store) => Results.Ok(store.GetSnapshot()));
 
 app.MapGet("/api/auth/kite/login-url", (IConfiguration configuration) =>
 {
@@ -382,6 +385,66 @@ internal sealed class RepositoryBaselineStore
     public RepositoryBaselineRecord GetBaseline() => baseline;
 }
 
+internal sealed class ReferenceDataModelMonitorStore
+{
+    private readonly ReferenceDataModelMonitorSnapshot snapshot = new(
+        "I01-E01-F04-S1",
+        "Monitor Reference data model",
+        "SMA-MLQ-0003",
+        "Feature Store",
+        "Trading Core Platform",
+        "Platform foundation",
+        "Reference data model",
+        "Reference Data Platform",
+        new[]
+        {
+            "rf-v2017-n4-1-pdf.pdf",
+            "ssrn-3138630.pdf",
+            "ssrn-3247865.pdf"
+        },
+        new[]
+        {
+            "docs/master-data/MasterKnowledgeBase.md",
+            "docs/master-data/MachineLearningMasterCatalog.md",
+            "docs/traceability/SourceTraceabilityMatrix.md",
+            "docs/traceability/ImplementationTraceabilityMatrix.md",
+            "docs/architecture/ArchitectureBaseline_v1.md",
+            "docs/architecture/ArchitectureTraceabilityMatrix.md"
+        },
+        new[]
+        {
+            new ReferenceDataModelTarget("Instrument master", "Planned", "Versioned instrument identity and exchange metadata"),
+            new ReferenceDataModelTarget("NSE/BSE symbol mapping", "Planned", "Canonical tradingsymbol to exchange mapping"),
+            new ReferenceDataModelTarget("Kite instrument sync", "Planned", "Broker instrument dump ingestion path"),
+            new ReferenceDataModelTarget("Expiry calendar", "Planned", "Derivative expiry schedule"),
+            new ReferenceDataModelTarget("Trading calendar", "Planned", "Exchange session calendar"),
+            new ReferenceDataModelTarget("Holiday calendar", "Planned", "Market holiday and settlement exclusions"),
+            new ReferenceDataModelTarget("Corporate actions framework", "Planned", "Split, bonus, dividend, and symbol-change adjustment model"),
+            new ReferenceDataModelTarget("Sector/industry classification", "Planned", "Reusable sector and industry taxonomy")
+        },
+        new[]
+        {
+            "Missing ticks",
+            "Duplicate ticks",
+            "Timezone handling",
+            "Holiday handling",
+            "Corporate actions",
+            "Splits",
+            "Bonus issues"
+        },
+        new[]
+        {
+            "No live trading path",
+            "No execution endpoint",
+            "No order placement",
+            "CapitalProtectionReadinessReport remains the live-trading gate"
+        },
+        "Monitored",
+        DateTimeOffset.Parse("2026-06-11T00:00:00Z", CultureInfo.InvariantCulture));
+
+    public ReferenceDataModelMonitorSnapshot GetSnapshot() => snapshot;
+}
+
 internal sealed record KiteLoginResponse(
     string LoginUrl,
     string RedirectUrl,
@@ -404,6 +467,28 @@ internal sealed record RepositoryBaselineRecord(
     string ImplementationAuthorization,
     string AuditNote,
     DateTimeOffset StoredUtc);
+
+internal sealed record ReferenceDataModelMonitorSnapshot(
+    string StoryId,
+    string StoryName,
+    string KnowledgeId,
+    string KnowledgeConcept,
+    string Initiative,
+    string Epic,
+    string Feature,
+    string ArchitectureComponent,
+    IReadOnlyList<string> SourceDocuments,
+    IReadOnlyList<string> TraceabilityArtifacts,
+    IReadOnlyList<ReferenceDataModelTarget> Targets,
+    IReadOnlyList<string> DataQualityChecks,
+    IReadOnlyList<string> CapitalProtectionControls,
+    string Status,
+    DateTimeOffset MonitoredUtc);
+
+internal sealed record ReferenceDataModelTarget(
+    string Name,
+    string Status,
+    string Evidence);
 
 internal sealed record TickInput(
     long InstrumentToken,

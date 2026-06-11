@@ -13,6 +13,7 @@ interface RepositoryBaselineData {
 
 @Component({
   selector: 'app-repository-baseline-exposure',
+  standalone: false,
   templateUrl: './repository-baseline-exposure.component.html',
   styleUrls: ['./repository-baseline-exposure.component.css']
 })

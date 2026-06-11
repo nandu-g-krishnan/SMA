@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 import { ConfigurationRegistryComponent } from './configuration-registry.component';
-import { ConfigurationRegistryService } from './configuration-registry.service';
+import { ConfigurationItem, ConfigurationRegistryService } from './configuration-registry.service';
 import { of, throwError } from 'rxjs';
 
 describe('ConfigurationRegistryComponent', () => {
@@ -29,8 +31,9 @@ describe('ConfigurationRegistryComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ ConfigurationRegistryComponent ],
-      imports: [ HttpClientTestingModule, FormsModule ],
-      providers: [{ provide: ConfigurationRegistryService, useValue: mockConfigService }]
+      imports: [ CommonModule, HttpClientTestingModule, FormsModule ],
+      providers: [{ provide: ConfigurationRegistryService, useValue: mockConfigService }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 
@@ -68,13 +71,13 @@ describe('ConfigurationRegistryComponent', () => {
   });
 
   it('should select configuration', () => {
-    const config = { key: 'test', value: 'value', type: 'string' };
+    const config: ConfigurationItem = { key: 'test', value: 'value', type: 'string' };
     component.selectConfiguration(config);
     expect(component.selectedConfig).toBe(config);
   });
 
   it('should validate configuration on save', () => {
-    const config = { key: 'test', value: 'value', type: 'string' };
+    const config: ConfigurationItem = { key: 'test', value: 'value', type: 'string' };
     component.selectedConfig = config;
     component.saveConfiguration();
     expect(mockConfigService.setConfiguration).toHaveBeenCalled();
@@ -82,7 +85,7 @@ describe('ConfigurationRegistryComponent', () => {
 
   it('should delete configuration with confirmation', () => {
     spyOn(window, 'confirm').and.returnValue(true);
-    const config = { key: 'test', value: 'value', type: 'string' };
+    const config: ConfigurationItem = { key: 'test', value: 'value', type: 'string' };
     component.deleteConfiguration(config);
     expect(mockConfigService.deleteConfiguration).toHaveBeenCalledWith('test');
   });

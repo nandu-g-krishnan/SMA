@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ConfigurationMonitoringComponent } from './configuration-monitoring.component';
 import { ConfigurationRegistryMonitoringService } from './configuration-registry-monitoring.service';
@@ -24,8 +26,9 @@ describe('ConfigurationMonitoringComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ ConfigurationMonitoringComponent ],
-      imports: [ HttpClientTestingModule ],
-      providers: [{ provide: ConfigurationRegistryMonitoringService, useValue: mockMonitoringService }]
+      imports: [ CommonModule, HttpClientTestingModule ],
+      providers: [{ provide: ConfigurationRegistryMonitoringService, useValue: mockMonitoringService }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 

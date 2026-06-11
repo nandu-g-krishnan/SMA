@@ -2,6 +2,75 @@
 
 Status: ACTIVE
 
+## Current Story
+
+| Field | Value |
+| --- | --- |
+| Story Id | I01-E01-F04-S1 |
+| Story Name | Monitor Reference data model |
+| Initiative | Trading Core Platform |
+| Epic | Platform foundation |
+| Feature | Reference data model |
+| Phase | Phase 1A Reference Data Platform |
+| Priority | medium-priority |
+| Status Before Implementation | Ready |
+
+## Source Knowledge Coverage
+
+| Evidence Type | Evidence |
+| --- | --- |
+| KnowledgeIds | SMA-MLQ-0003 |
+| Knowledge Concept | Feature Store |
+| Source Documents | rf-v2017-n4-1-pdf.pdf; ssrn-3138630.pdf; ssrn-3247865.pdf |
+| Source Page | Document-level source reference recorded in extraction audit; page-specific review logged in GapAnalysis |
+| Master Catalogs | MasterKnowledgeBase.md; MachineLearningMasterCatalog.md |
+| Architecture | ArchitectureBaseline_v1.md; ArchitectureTraceabilityMatrix.md |
+| Traceability | SourceTraceabilityMatrix.md; ImplementationTraceabilityMatrix.md |
+| Coverage Status | PASS |
+
+## Files Expected To Change
+
+| File | Purpose |
+| --- | --- |
+| apps/api/SMA.Api/Program.cs | Add read-only reference data model monitor endpoint and traceable response model |
+| automation/test-reference-data-model-monitor.ps1 | Add smoke test for reference data monitor endpoint |
+| docs/traceability/ImplementationTraceabilityMatrix.md | Map story to code, API, database target, UI surface, and test |
+| docs/validation/StoryKnowledgeValidationReport.md | Record knowledge validation evidence |
+| docs/validation/StoryAuditReport.md | Record audit evidence |
+| docs/validation/StorySecurityReport.md | Record security evidence |
+| docs/validation/StoryAcceptanceReport.md | Record acceptance evidence |
+| docs/validation/StoryTraceabilityReport.md | Record traceability evidence |
+
+## Acceptance Criteria
+
+- Knowledge Validation: PASS.
+- Source Validation: PASS.
+- PDF Compliance Validation: PASS.
+- Kite Documentation Compliance Validation: not applicable because this story does not modify broker, auth, streaming, order, or Kite instrument sync contracts.
+- Architecture Validation: PASS.
+- Traceability Validation: PASS.
+- Testing Validation: PASS.
+- Documentation Validation: PASS.
+- Master Knowledge Base Validation: PASS.
+- Signal, Strategy, Risk, and AI catalog validation: no catalog mutation required.
+- Data Quality Validation: PASS for monitored data-quality gates; no market-data ingestion behavior added.
+- Capital Protection Validation: PASS for no live-trading path.
+
+## Implementation Summary
+
+The implementation adds a read-only `/api/reference-data/model/monitor` endpoint that exposes the reference data model monitoring targets from the locked Phase 1A architecture baseline:
+
+- Instrument master.
+- NSE/BSE symbol mapping.
+- Kite instrument sync.
+- Expiry calendar.
+- Trading calendar.
+- Holiday calendar.
+- Corporate actions framework.
+- Sector/industry classification.
+
+The endpoint returns story, KnowledgeId, source documents, traceability artifacts, data-quality checks, and capital-protection controls. It does not place orders, open execution paths, or bypass any capital-protection gate.
+
 Story: `I01-E01-F01-S2: Validate Repository baseline`
 
 ## Story Metadata

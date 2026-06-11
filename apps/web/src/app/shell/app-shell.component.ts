@@ -3,6 +3,7 @@ import { ProductNavigationService } from './product-navigation.service';
 
 @Component({
   selector: 'app-shell',
+  standalone: false,
   templateUrl: './app-shell.component.html',
   styleUrls: ['./app-shell.component.css']
 })

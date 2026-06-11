@@ -1,26 +1,37 @@
 # Story Traceability Report
 
+Story: I01-E01-F04-S1 - Monitor Reference data model
+
 Status: PASS
 
-Story: `I01-E01-F01-S1: Store Repository baseline`
+Generated: 2026-06-11
 
-## Required Traceability Checks
+## Traceability Matrix
 
-| Traceability Check | Result | Evidence |
-| --- | --- | --- |
-| KnowledgeId | PASS | `SMA-KNW-0018` |
-| Source Document | PASS | `4823_Technical Analysis.pdf`; `Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf`; `Idenitfying-Chart-Patterns.pdf` |
-| Architecture Component | PASS | Trading Core Platform Foundation |
-| Initiative | PASS | Trading Core Platform |
-| Epic | PASS | Platform foundation |
-| Feature | PASS | Repository baseline |
-| Story | PASS | `I01-E01-F01-S1` |
-| Code Module | PASS | `apps/api/SMA.Api/Program.cs` |
-| Database Table | PASS | `repository_baseline_target`; PostgreSQL persistence deferred to database platform phase |
-| API | PASS | `/api/foundation/repository-baseline` |
-| UI Component | PASS | `foundation-repository-baseline-view`; dashboard integration deferred to UI phase |
-| Test | PASS | `automation/test-foundation-baseline.ps1` |
+| Field | Value |
+| --- | --- |
+| KnowledgeId | SMA-MLQ-0003 |
+| Source Document | rf-v2017-n4-1-pdf.pdf; ssrn-3138630.pdf; ssrn-3247865.pdf |
+| Source Page | Document-level source reference recorded in extraction audit; page-specific review logged in GapAnalysis |
+| Architecture Component | Reference Data Platform |
+| Initiative | Trading Core Platform |
+| Epic | Platform foundation |
+| Feature | Reference data model |
+| Story | I01-E01-F04-S1 |
+| Code Module | apps/api/SMA.Api/Program.cs |
+| Database Table | reference_data_model_monitor_target |
+| API | /api/reference-data/model/monitor |
+| UI Component | reference-data-model-monitor-view |
+| Test | automation/test-reference-data-model-monitor.ps1 |
 
-## Closure Gate
+## Validation Evidence
 
-Traceability evidence is complete for this story.
+| Check | Result |
+| --- | --- |
+| SourceTraceabilityMatrix reviewed | PASS |
+| ImplementationTraceabilityMatrix updated | PASS |
+| StoryRegistry ready-state reviewed | PASS |
+| StoryExecutionDashboard ready-state reviewed | PASS |
+| Traceability validator | PASS |
+
+No orphan code, API, database target, UI surface, or test mapping was introduced for this story.

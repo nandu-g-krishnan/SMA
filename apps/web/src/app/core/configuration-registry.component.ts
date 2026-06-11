@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-configuration-registry',
+  standalone: false,
   templateUrl: './configuration-registry.component.html',
   styleUrls: ['./configuration-registry.component.css']
 })

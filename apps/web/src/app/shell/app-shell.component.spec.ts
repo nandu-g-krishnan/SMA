@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { AppShellComponent } from './app-shell.component';
 import { ProductNavigationService } from './product-navigation.service';
 import { of } from 'rxjs';
@@ -18,7 +20,9 @@ describe('AppShellComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ AppShellComponent ],
-      providers: [{ provide: ProductNavigationService, useValue: mockNavService }]
+      imports: [ CommonModule ],
+      providers: [{ provide: ProductNavigationService, useValue: mockNavService }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 

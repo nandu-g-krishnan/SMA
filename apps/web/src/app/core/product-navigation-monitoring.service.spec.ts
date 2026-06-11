@@ -66,6 +66,9 @@ describe('ProductNavigationMonitoringService', () => {
     service.recordNavigate('/dashboard', 100);
     service.recordNavigate('/trading', 150);
 
+    const reqs = httpMock.match('/api/foundation/navigation-events');
+    reqs.forEach(req => req.flush({}));
+
     const snapshot = service.getMetricsSnapshot();
     expect(snapshot.totalNavEvents).toBe(2);
     expect(snapshot.averageResponseTime).toBe(125);

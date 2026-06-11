@@ -2,22 +2,31 @@
 
 Status: ACTIVE
 
-Generated: 2026-06-11T08:32:37.089Z
+Generated: 2026-06-11T12:22:31.956Z
 
-Local story count: 1812
+Local story count: 1821
 
 | Story Id | KnowledgeIds | Epic | Feature | GitHub Issue | Local Story File | Status | Implementation Status | Audit Status | Security Status | Acceptance Status | Closure Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | I01-E01-F01-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | #319 | github/backlog/Completed/I01-E01-F01-S1.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
-| I01-E01-F01-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F01-S2.md | Closed | Implementation Complete | PASS | PASS | PASS | Closed |
-| I01-E01-F01-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F01-S3.md | Ready | Not Started | Required | Required | Required | Not Ready |
-| I01-E01-F02-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Product navigation | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F02-S1.md | Closed | Implementation Complete | PASS | PASS | PASS | Closed |
-| I01-E01-F02-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Product navigation | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F02-S2.md | Ready | Not Started | Required | Required | Required | Not Ready |
+| I01-E01-F01-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F01-S2.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F01-S3 | Mapped through SourceTraceabilityMatrix (150+) | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F01-S3.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F02-S1 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F02-S1.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F02-S2 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F02-S2.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F02-S3 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F02-S3.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F03-S1 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S1.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F03-S2 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S2.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F03-S3 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S3.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F04-S1 | SMA-MLQ-0003 | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F04-S1.md | Closed | Implementation Complete | PASS | PASS | PASS | Closed |
+| I01-E01-F04-S1 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/S10-S25_BATCH_CLOSURE.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
+| I01-E01-F01-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F01-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
+| I01-E01-F01-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F01-S3.md | Open | Not Started | Required | Required | Required | Not Ready |
+| I01-E01-F02-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Product navigation | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F02-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
+| I01-E01-F02-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Product navigation | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F02-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F02-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Product navigation | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F02-S3.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F03-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Configuration registry | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F03-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F03-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Configuration registry | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F03-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F03-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Configuration registry | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F03-S3.md | Open | Not Started | Required | Required | Required | Not Ready |
-| I01-E01-F04-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F04-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F04-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F04-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F04-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F04-S3.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E02-F01-S1 | Mapped through SourceTraceabilityMatrix | Trading workflow | Trade setup builder | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E02-F01-S1.md | Open | Not Started | Required | Required | Required | Not Ready |

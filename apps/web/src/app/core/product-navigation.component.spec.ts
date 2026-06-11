@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CommonModule } from '@angular/common';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductNavigationComponent } from './product-navigation.component';
 
@@ -16,7 +18,9 @@ describe('ProductNavigationComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [ ProductNavigationComponent ],
-      providers: [{ provide: Router, useValue: mockRouter }]
+      imports: [ CommonModule ],
+      providers: [{ provide: Router, useValue: mockRouter }],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   });
 

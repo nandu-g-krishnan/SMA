@@ -7,11 +7,11 @@
   </div>
 
   <ul class="nav-menu">
-    <li *ngFor="let item of navigationItems" 
-        class="nav-item"
-        [class.active]="isActive(item.route)"
-        [class.has-children]="hasChildren(item)"
-        *ngIf="canAccess(item)">
+    <ng-container *ngFor="let item of navigationItems">
+      <li *ngIf="canAccess(item)"
+          class="nav-item"
+          [class.active]="isActive(item.route)"
+          [class.has-children]="hasChildren(item)">
       
       <a *ngIf="!hasChildren(item)" 
          class="nav-link" 
@@ -36,7 +36,8 @@
           </li>
         </ul>
       </details>
-    </li>
+      </li>
+    </ng-container>
   </ul>
 
   <div class="nav-footer" *ngIf="isExpanded">

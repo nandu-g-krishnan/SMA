@@ -11,6 +11,7 @@ interface NavItem {
 
 @Component({
   selector: 'app-product-navigation',
+  standalone: false,
   templateUrl: './product-navigation.component.html',
   styleUrls: ['./product-navigation.component.css']
 })
@@ -100,7 +101,7 @@ export class ProductNavigationComponent implements OnInit {
   }
 
   hasChildren(item: NavItem): boolean {
-    return item.children && item.children.length > 0;
+    return !!item.children && item.children.length > 0;
   }
 
   canAccess(item: NavItem): boolean {
