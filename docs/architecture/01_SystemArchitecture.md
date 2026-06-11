@@ -11,7 +11,8 @@ SMA is a production-grade, institutional-quality AI quantitative trading platfor
 - CQRS
 - Event Driven Architecture
 - Modular monolith first
-- Microservice ready
+- Modular monolith first
+- Future-service-extractable module boundaries
 - SOLID principles
 - Hexagonal architecture for integrations
 
@@ -23,15 +24,18 @@ SMA is a production-grade, institutional-quality AI quantitative trading platfor
 | Backend | .NET, ASP.NET Core, SignalR, background workers |
 | Database | PostgreSQL only |
 | Cache | Redis Community |
-| Queue | RabbitMQ |
+| Queue | PostgreSQL outbox-ready persistence; Redis coordination where needed; RabbitMQ optional future candidate |
 | AI services | Python, FastAPI, scikit-learn, PyTorch, XGBoost, LightGBM, Pandas, NumPy |
 | LLM | Provider abstraction for OpenAI, Ollama, DeepSeek, Anthropic, Qwen |
 | Monitoring | OpenTelemetry, Prometheus, Grafana, Serilog |
-| CI/CD | GitHub Actions, Docker |
+| CI/CD | GitHub Actions |
+| Packaging | Docker optional |
 
 ## High-Level Runtime
 
-Angular clients call ASP.NET Core APIs and subscribe to SignalR streams. Backend application services coordinate domain modules, PostgreSQL persistence, Redis cache, RabbitMQ events, broker adapters, and Python AI services. Workers process market data, indicators, patterns, signals, risk checks, news, AI jobs, execution, and backtests.
+Angular clients call ASP.NET Core APIs and subscribe to SignalR streams. Backend application services coordinate isolated domain modules, PostgreSQL persistence, Redis cache/realtime state, broker adapters, and Python AI services. Modules process market data, indicators, patterns, signals, risk checks, news, AI jobs, execution, and backtests inside a modular monolith for the current 1-3 user deployment.
+
+Docker, RabbitMQ, Kubernetes, service mesh, and microservice extraction are future scaling candidates, not current runtime requirements.
 
 ## Core Components
 

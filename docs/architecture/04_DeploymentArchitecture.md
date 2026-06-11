@@ -2,33 +2,32 @@
 
 ## Environments
 
-Dev, QA, UAT, and Prod are supported. Each environment has isolated PostgreSQL databases, Redis, RabbitMQ, secrets, broker credentials, and observability dashboards.
+Dev, QA, UAT, and Prod remain logical environments, but current deployment targets local native execution for development and a single Ubuntu VPS for production.
 
-## Containers
+The production VPS runs Angular UI, ASP.NET Core API, PostgreSQL, Redis, SignalR, Python AI Services, and Kite Connect integration on one machine for 1-3 users.
 
-| Container | Runtime |
+## Runtime Modules
+
+| Module | Runtime |
 | --- | --- |
 | `trading-api` | ASP.NET Core API and SignalR |
-| `market-data-worker` | .NET background worker |
-| `indicator-worker` | .NET background worker |
-| `pattern-worker` | .NET background worker |
-| `signal-worker` | .NET background worker |
-| `risk-worker` | .NET background worker |
-| `news-worker` | .NET background worker |
-| `execution-worker` | .NET background worker |
-| `backtest-worker` | .NET background worker |
-| `ai-service` | Python FastAPI |
-| `regime-service` | Python FastAPI |
-| `sentiment-service` | Python FastAPI |
-| `forecast-service` | Python FastAPI |
-| `feature-store-service` | Python FastAPI or .NET API facade |
-| `trading-ui` | Angular static frontend |
+| `market-data` | .NET background worker/module |
+| `indicator-engine` | .NET module |
+| `pattern-engine` | .NET module |
+| `signal-engine` | .NET module |
+| `risk-engine` | .NET module |
+| `news-intelligence` | .NET or Python module |
+| `execution-engine` | .NET module, gated by paper trading and capital protection |
+| `backtesting` | .NET module |
+| `ai-services` | Python FastAPI |
+| `feature-store` | .NET API facade and PostgreSQL-backed feature tables |
+| `trading-ui` | Angular frontend |
 | `postgres` | PostgreSQL |
 | `redis` | Redis Community |
-| `rabbitmq` | RabbitMQ |
-| `prometheus` | Metrics |
-| `grafana` | Dashboards |
+| `observability` | Logs, metrics, health checks; Prometheus/Grafana optional |
 
 ## Deployment Strategy
 
-Start as a Docker Compose deployment for local/dev. Evolve to orchestrated containers when scaling requires independent worker replicas. Keep module boundaries explicit so each worker can become a service without rewriting domain logic.
+Start with local native development and a single-VPS modular monolith. Docker Compose may be used as optional convenience tooling for PostgreSQL, Redis, or packaging.
+
+Keep module boundaries explicit so each module can become a separate service without rewriting domain logic when scaling requires it.

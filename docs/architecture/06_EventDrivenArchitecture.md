@@ -2,7 +2,9 @@
 
 ## Messaging
 
-RabbitMQ is the primary queue. PostgreSQL outbox provides transactional event persistence and retry safety.
+PostgreSQL outbox-ready persistence is the primary event reliability pattern for the current single-VPS modular monolith. Redis may be used for short-lived coordination, realtime state, cache, and rate-limit state.
+
+RabbitMQ or another distributed messaging platform is a future scaling candidate and may be introduced through Architecture Change Request when measured throughput, decoupling, or retry needs justify the added operations cost.
 
 ## Event Categories
 

@@ -27,11 +27,13 @@ No phase may be skipped.
 ## Forbidden Shortcuts
 
 - No AI before Feature Store.
+- AI is mandatory for intelligence and research workflows, but it may not bypass Feature Store, deterministic signals, Risk Engine, or Capital Protection.
 - No Strategy implementation before Signal Engine.
 - No Execution before Paper Trading.
 - No Live Trading before `CapitalProtectionReadinessReport.md` = PASS.
 - No Architecture change without `ArchitectureChangeRequest.md`.
 - No story closure without local and remote status synchronization, unless GitHub is unavailable.
+- No mandatory Docker, Kubernetes, microservices, multi-tenancy, or enterprise SaaS infrastructure for the current 1-3 user deployment.
 
 ## Story Implementation Rule
 
@@ -70,3 +72,20 @@ Epic 001 Foundation Platform.
 First milestone:
 
 Kite Login to Instrument Sync to Live Tick Stream to PostgreSQL Tick Storage to 1 Minute Candle Generation.
+
+## Runtime Simplicity Rule
+
+Current runtime target is local native development and a single Ubuntu VPS production deployment.
+
+Required runtime components:
+
+- Angular
+- ASP.NET Core
+- PostgreSQL
+- Redis
+- SignalR
+- Python AI Services
+- Kite Connect
+- GitHub Actions
+
+Docker and Docker Compose are optional convenience tooling. They are not implementation blockers.

@@ -22,3 +22,4 @@ Use this document for any future change to the locked v1 architecture baseline.
 | ACR Id | Date | Affected Area | Proposed Change | Decision | Approval Evidence |
 | --- | --- | --- | --- | --- | --- |
 | ACR-0001 | 2026-06-11 | Architecture governance | Lock ArchitectureBaseline_v1 and require ACR for future architecture changes | Approved | Implementation Authorization Plan v1.0 |
+| ACR-0002 | 2026-06-11 | Deployment architecture and infrastructure scope | Move Docker, Docker Compose, RabbitMQ clusters, Kubernetes, service mesh, complex microservices, multi-region, and SaaS multi-tenant infrastructure from mandatory runtime requirements to optional or future scaling candidates. Adopt local native development and single Ubuntu VPS modular monolith production for 1-3 users while preserving all knowledge, AI, traceability, data-quality, risk, and capital-protection governance. | Approved | SMA Vision Lock v2 user directive |

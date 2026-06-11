@@ -13,8 +13,23 @@ Status = LOCKED
 | Realtime transport | SignalR |
 | AI services | Python FastAPI |
 | Broker | Zerodha Kite Connect |
-| Packaging | Docker |
+| Deployment standard | Local native development; single Ubuntu VPS production |
+| Packaging | Docker optional |
 | CI/CD | GitHub Actions |
+
+## Runtime Deployment Standard v1
+
+| Area | Decision |
+| --- | --- |
+| Users | 1-3 |
+| Development | Local native execution |
+| Production | Single Ubuntu VPS |
+| Target VPS | Ubuntu, 8 vCPU, 16 GB RAM, 200 GB SSD |
+| Architecture | Modular monolith |
+| Containers | Optional |
+| Required runtime components | Angular UI, ASP.NET Core API, PostgreSQL, Redis, SignalR, Python AI Services, Kite Connect |
+
+The platform is optimized for maximum trading intelligence, automation, reliability, and research capability, not maximum infrastructure complexity.
 
 ## Approved Phase Order
 
@@ -45,10 +60,28 @@ Kite Login
 ## Forbidden Shortcuts
 
 - No AI before Feature Store.
+- AI is mandatory for market intelligence, research, news/results interpretation, regime assistance, journal analysis, strategy research, and opportunity discovery, but it may not bypass the deterministic trading core.
 - No Strategy Engine before Signal Engine.
 - No Execution before Paper Trading.
 - No Live Trading before CapitalProtectionReadinessReport = PASS.
 - No Architecture changes without ArchitectureChangeRequest approval.
+
+## Deterministic Trading Core
+
+Production trading flow must remain:
+
+```text
+Data
+  -> Feature Store
+  -> Indicators
+  -> Signals
+  -> Strategies
+  -> Risk Engine
+  -> Capital Protection
+  -> Execution Engine
+```
+
+AI assists. The risk engine governs.
 
 ## Implementation Directive
 

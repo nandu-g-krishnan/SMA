@@ -9,18 +9,18 @@ Purpose: standardize the local development environment for Epic 001 Foundation P
 | Tool | Required Version | Reason |
 | --- | --- | --- |
 | Windows | Windows 11 23H2 or newer | Primary developer workstation target |
-| WSL 2 | Latest Windows-supported WSL 2 | Required by Docker Desktop Linux containers |
+| WSL 2 | Latest Windows-supported WSL 2 | Optional; useful for Linux parity and container tooling |
 | Git | 2.45 or newer | Repository, GitHub, and automation workflows |
 | GitHub CLI | 2.50 or newer | GitHub issue and Project V2 synchronization |
-| .NET SDK | 10.0.100 or newer .NET 10 SDK feature band | Required by `global.json`, `net10.0`, ASP.NET Core API, and Docker build |
+| .NET SDK | 10.0.100 or newer .NET 10 SDK feature band | Required by `global.json`, `net10.0`, and ASP.NET Core API |
 | Node.js | 24.14.0 or newer Node 24 LTS | Supported by Angular 20 and current LTS for frontend tooling |
 | npm | Bundled with Node.js 24 LTS | Package manager for Angular workspace |
 | Angular CLI | 20.x | Must match Angular 20 application dependencies |
 | TypeScript | 5.8.x | Required by Angular 20.0/20.1 compatibility range |
-| Docker Desktop | 4.42 or newer | Runs PostgreSQL, Redis, API, and web containers locally |
-| Docker Compose | Compose v2, bundled with Docker Desktop | Required by `docker-compose.yml` |
-| PostgreSQL | 16.x via Docker image `postgres:16-alpine` | Matches repository compose configuration |
-| Redis | 7.x via Docker image `redis:7-alpine` | Matches repository compose configuration |
+| Docker Desktop | 4.42 or newer | Optional convenience tooling for container parity |
+| Docker Compose | Compose v2, bundled with Docker Desktop | Optional convenience tooling for local services |
+| PostgreSQL | 16.x native install or optional Docker image `postgres:16-alpine` | Required database runtime |
+| Redis | 7.x native install or optional Docker image `redis:7-alpine` | Required cache and realtime-state runtime |
 | Python | 3.13.x | Required for future Python FastAPI and ML services |
 | PowerShell | 7.4 LTS or newer, Windows PowerShell 5.1 supported for existing scripts | Runs local automation and validation scripts |
 | Visual Studio Code | Current stable | Recommended IDE |
@@ -39,7 +39,7 @@ The repository currently requires:
 
 ## Required Local Services
 
-Run through Docker Compose:
+Optional Docker Compose flow:
 
 - PostgreSQL on `${SMA_POSTGRES_PORT:-5432}`
 - Redis on `${SMA_REDIS_PORT:-6379}`
@@ -82,7 +82,8 @@ powershell -ExecutionPolicy Bypass -File automation\validate-traceability.ps1
 
 - No implementation story may be closed unless the workstation can build, run, and validate the affected code path.
 - No live trading workflow may be enabled from local configuration.
-- Docker Compose is the required local integration environment for PostgreSQL and Redis.
+- Docker Compose is optional. Local native PostgreSQL and Redis are valid for the current deployment standard.
+- Docker availability is not an implementation blocker unless a selected story explicitly changes container packaging.
 - The first implementation milestone remains Kite Login to Instrument Sync to Live Tick Stream to PostgreSQL Tick Storage to 1 Minute Candle Generation.
 
 ## Notes

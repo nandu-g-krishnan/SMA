@@ -2,7 +2,7 @@
 
 Status: ACTIVE
 
-Generated: 2026-06-11T12:22:31.956Z
+Generated: 2026-06-11T12:33:14.557Z
 
 Local story count: 1821
 
@@ -17,7 +17,7 @@ Local story count: 1821
 | I01-E01-F03-S1 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S1.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
 | I01-E01-F03-S2 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S2.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
 | I01-E01-F03-S3 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F03-S3.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
-| I01-E01-F04-S1 | SMA-MLQ-0003 | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F04-S1.md | Closed | Implementation Complete | PASS | PASS | PASS | Closed |
+| I01-E01-F04-S1 | Mapped through SourceTraceabilityMatrix | Platform foundation | Reference data model | Synced or blocked by GitHub API limits | github/backlog/Completed/I01-E01-F04-S1.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
 | I01-E01-F04-S1 | Mapped through SourceTraceabilityMatrix | Mapped Epic | Mapped Feature | Synced or blocked by GitHub API limits | github/backlog/Completed/S10-S25_BATCH_CLOSURE.md | Closed | Implementation Complete | PASS evidence required | PASS evidence required | PASS evidence required | Closed |
 | I01-E01-F01-S2 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F01-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I01-E01-F01-S3 | Mapped through SourceTraceabilityMatrix | Platform foundation | Repository baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I01-E01-F01-S3.md | Open | Not Started | Required | Required | Required | Not Ready |
@@ -673,8 +673,8 @@ Local story count: 1821
 | I10-E05-F04-S2 | Mapped through SourceTraceabilityMatrix | Security and compliance | Compliance checklist | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E05-F04-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I10-E06-F01-S1 | Mapped through SourceTraceabilityMatrix | DevOps and testing | GitHub Actions | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F01-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I10-E06-F01-S2 | Mapped through SourceTraceabilityMatrix | DevOps and testing | GitHub Actions | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F01-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
-| I10-E06-F02-S1 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Docker baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F02-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
-| I10-E06-F02-S2 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Docker baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F02-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
+| I10-E06-F02-S1 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Optional container readiness baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F02-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
+| I10-E06-F02-S2 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Optional container readiness baseline | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F02-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I10-E06-F03-S1 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Test pyramid | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F03-S1.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I10-E06-F03-S2 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Test pyramid | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F03-S2.md | Open | Not Started | Required | Required | Required | Not Ready |
 | I10-E06-F04-S1 | Mapped through SourceTraceabilityMatrix | DevOps and testing | Release checklist | Synced or blocked by GitHub API limits | github/backlog/Stories/I10-E06-F04-S1.md | Open | Not Started | Required | Required | Required | Not Ready |

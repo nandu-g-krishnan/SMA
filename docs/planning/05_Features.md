@@ -244,6 +244,6 @@
 - I10-E05-F03: Audit export (Security and compliance)
 - I10-E05-F04: Compliance checklist (Security and compliance)
 - I10-E06-F01: GitHub Actions (DevOps and testing)
-- I10-E06-F02: Docker baseline (DevOps and testing)
+- I10-E06-F02: Optional container readiness baseline (DevOps and testing; future scaling candidate)
 - I10-E06-F03: Test pyramid (DevOps and testing)
 - I10-E06-F04: Release checklist (DevOps and testing)

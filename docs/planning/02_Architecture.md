@@ -1,6 +1,6 @@
 # Architecture
 
-Frontend: Angular. Backend: ASP.NET Core. Database: PostgreSQL. Realtime: SignalR and WebSockets. Broker: Zerodha Kite Connect. AI: OpenAI plus Python ML services. Infrastructure: Docker, GitHub, GitHub Actions.
+Frontend: Angular. Backend: ASP.NET Core. Database: PostgreSQL. Cache: Redis. Realtime: SignalR and WebSockets. Broker: Zerodha Kite Connect. AI: OpenAI plus Python AI services. Infrastructure: local native development, single Ubuntu VPS production, GitHub Actions. Docker and Docker Compose are optional convenience tooling.
 
 Core contexts: Market Data, Technical Analysis, Pattern Recognition, Fundamental Analysis, Derivatives, Quant Research, AI/ML, Backtesting, Portfolio, Risk, Execution, Broker Integration, News/Sentiment, Monitoring, Administration.
 

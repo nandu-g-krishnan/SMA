@@ -40,7 +40,99 @@ The platform supports:
 - Broker: Zerodha Kite Connect
 - Realtime: SignalR and WebSockets
 - AI: OpenAI and Python ML services
-- Infrastructure: Docker, GitHub, GitHub Actions
+- Infrastructure: local native development, single Ubuntu VPS production, GitHub Actions
+- Optional packaging: Docker and Docker Compose
+
+## SMA Vision Lock v2
+
+SMA is an autonomous AI-assisted quantitative trading operating system.
+
+It is not only a charting tool, screener, or backtesting tool.
+
+The following must never be simplified:
+
+- PDF knowledge extraction
+- OCR extraction
+- Visual chart extraction
+- Master Knowledge Base
+- KnowledgeIds
+- Source traceability
+- Implementation traceability
+- Indicator, signal, feature, strategy, risk, valuation, macro, and market regime catalogs
+- Research governance
+- AI governance
+- Data quality
+- Capital protection
+- Story governance
+
+These are the core intellectual property of SMA.
+
+## Infrastructure Simplification Rule
+
+Current deployment target is 1-3 users.
+
+Use a modular monolith architecture:
+
+- Angular
+- ASP.NET Core
+- PostgreSQL
+- Redis
+- SignalR
+- Python AI Services
+- Kite Connect
+
+Development deployment is local native execution.
+
+Production deployment is a single Ubuntu VPS with 8 vCPU, 16 GB RAM, and 200 GB SSD.
+
+Docker is optional.
+
+Kubernetes, service mesh, complex microservices, multi-region deployment, and SaaS multi-tenant infrastructure are not required.
+
+Do not introduce infrastructure complexity that does not directly improve trading intelligence, market analysis, strategy quality, risk management, execution reliability, or research capability.
+
+Keep module boundaries explicit so future migration can follow:
+
+```text
+Module
+  -> Separate Service
+```
+
+without rewriting business logic.
+
+## AI Mandatory Rule
+
+AI is mandatory for:
+
+- News interpretation
+- Quarterly results analysis
+- Concall analysis
+- Management commentary analysis
+- Macro analysis
+- Sector rotation analysis
+- Market regime detection
+- Research assistance
+- Trade journal analysis
+- Strategy research
+- Strategy ranking
+- Opportunity discovery
+
+AI may not bypass deterministic trading systems.
+
+Mandatory production trading flow:
+
+```text
+Data
+  -> Feature Store
+  -> Indicators
+  -> Signals
+  -> Strategies
+  -> Risk Engine
+  -> Capital Protection
+  -> Execution Engine
+```
+
+AI assists. Risk engine governs.
 
 ## Required Architecture Outputs
 

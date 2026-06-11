@@ -11,7 +11,9 @@ OpenTelemetry collects traces and metrics. Prometheus stores metrics. Grafana pr
 - Market data freshness
 - Tick/candle ingestion lag
 - Indicator and feature calculation lag
-- RabbitMQ queue depth
+- Outbox backlog and retry count
+- Redis latency and memory use
+- Optional queue depth if a distributed queue is introduced later
 - PostgreSQL performance
 - Broker health
 - Order lifecycle
