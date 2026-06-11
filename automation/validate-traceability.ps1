@@ -40,6 +40,7 @@ $requiredFiles = @(
   "docs/validation/StorySecurityReport.md",
   "docs/validation/StoryAcceptanceReport.md",
   "docs/validation/StoryTraceabilityReport.md",
+  "docs/validation/EngineeringStandardsComplianceReport.md",
   "docs/validation/BacklogCoverageReport.md",
   "docs/validation/BacklogDistributionReport.md",
   "docs/validation/BacklogDeduplicationReport.md",
@@ -51,6 +52,7 @@ $requiredFiles = @(
   "docs/governance/MasterUniversalStoryImplementationOperatingSystem.md",
   "docs/governance/StoryLifecycleGovernanceRules.md",
   "docs/governance/ImplementationExecutionRules.md",
+  "docs/governance/EngineeringArchitectureAndCodingStandards.md",
   "github/backlog/Dependencies.md",
   "github/backlog/BacklogCoverageReport.md",
   "github/backlog/BacklogBaseline_v1.md",
@@ -87,6 +89,7 @@ foreach ($relativePath in $requiredFiles) {
     "docs/validation/StrategyReadinessReport.md",
     "docs/validation/DataQualityReport.md",
     "docs/validation/CapitalProtectionReadinessReport.md",
+    "docs/validation/EngineeringStandardsComplianceReport.md",
     "docs/validation/BacklogCoverageReport.md",
     "docs/validation/BacklogDistributionReport.md",
     "docs/master-data/KiteApiMasterCatalog.md",
@@ -158,6 +161,7 @@ foreach ($relativePath in $requiredFiles) {
     foreach ($rule in @(
       "Repository Is The Source Of Truth",
       "P0 Rule: Knowledge First",
+      "EngineeringArchitectureAndCodingStandards.md",
       "P0-A Rule: Repository Reality Check",
       "P0-B Rule: Source Document Precedence",
       "P0-C Rule: Master Data Synchronization",
@@ -178,6 +182,7 @@ foreach ($relativePath in $requiredFiles) {
       "Knowledge Validation",
       "Build Validation",
       "Test Validation",
+      "Engineering Standards Compliance",
       "Anti-Shortcut Rules",
       "No evidence means no PASS",
       "Knowledge correctness is more important than implementation speed",
@@ -185,6 +190,31 @@ foreach ($relativePath in $requiredFiles) {
     )) {
       if ($content -notmatch [regex]::Escape($rule)) {
         [Console]::Error.WriteLine("Master operating system is missing required section/rule: $rule")
+        $failed = $true
+      }
+    }
+  }
+
+  if ($relativePath -eq "docs/governance/EngineeringArchitectureAndCodingStandards.md") {
+    if ($content -notmatch "Status:\s*MANDATORY") {
+      [Console]::Error.WriteLine("Engineering architecture and coding standards must be MANDATORY.")
+      $failed = $true
+    }
+
+    if ($content -notmatch "Priority:\s*P0") {
+      [Console]::Error.WriteLine("Engineering architecture and coding standards must be P0.")
+      $failed = $true
+    }
+
+    foreach ($rule in @(
+      "Modular Monolith Rule",
+      "MVP Testing Priority Rule",
+      "Mock Data Rule",
+      "Kite Integration Standards",
+      "Engineering Compliance Gate"
+    )) {
+      if ($content -notmatch [regex]::Escape($rule)) {
+        [Console]::Error.WriteLine("Engineering standards are missing required rule: $rule")
         $failed = $true
       }
     }

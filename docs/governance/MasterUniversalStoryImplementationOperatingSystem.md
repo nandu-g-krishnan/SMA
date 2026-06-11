@@ -95,6 +95,7 @@ Mandatory:
 ```text
 StoryLifecycleGovernanceRules.md
 ImplementationExecutionRules.md
+EngineeringArchitectureAndCodingStandards.md
 MasterUniversalStoryImplementationOperatingSystem.md
 ArchitectureBaseline_v1.md
 ArchitectureChangeRequest.md
@@ -104,6 +105,7 @@ Verify:
 
 - Architecture remains LOCKED.
 - Story lifecycle rules exist.
+- Engineering architecture and coding standards exist.
 - Implementation authorization remains valid.
 
 If governance is invalid, stop.
@@ -393,6 +395,8 @@ If unable, generate:
 docs/validation/ManualTestChecklist.md
 ```
 
+During MVP, unit tests are P2 only for non-trading foundation stories when build, smoke, manual, audit, security, acceptance, and traceability evidence exists. Unit tests remain P0 for Kite authentication/session handling, market-data ingestion, candle aggregation, data quality logic, Feature Store calculations, indicators, signals, strategies, risk controls, execution controls, capital protection, and AI governance logic.
+
 ## Step 15: Audit
 
 Generate:
@@ -482,6 +486,27 @@ Verify:
 
 Result must be PASS or FAIL.
 
+## Step 18A: Engineering Standards Compliance
+
+Generate or update:
+
+```text
+docs/validation/EngineeringStandardsComplianceReport.md
+```
+
+Validate:
+
+- Architecture compliance
+- Runtime compliance
+- Modular boundary compliance
+- Mock/live data mode
+- Testing priority decision
+- Kite compliance when applicable
+- Security compliance
+- Traceability compliance
+
+Result must be PASS or FAIL.
+
 ## Step 19: Update Project Artifacts
 
 Update:
@@ -504,6 +529,7 @@ Story may close only if:
 - Implementation PASS
 - Build PASS
 - Tests PASS
+- Engineering Standards Compliance PASS
 - Audit PASS
 - Security PASS
 - Acceptance PASS
@@ -512,6 +538,8 @@ Story may close only if:
 - ImplementationTraceabilityMatrix Updated
 - No Critical Vulnerabilities
 - No High Vulnerabilities
+
+For non-trading foundation stories during MVP, deferred unit tests are allowed only when `ManualTestChecklist.md` documents exact checks and expected results. This exception does not apply to Kite, market data, candle aggregation, data quality, Feature Store, indicators, signals, strategies, risk, execution, capital protection, or AI governance stories.
 
 ## Step 21: Local Closure
 
@@ -602,6 +630,7 @@ Knowledge
 -> Security
 -> Acceptance
 -> Traceability
+-> Engineering Standards Compliance
 -> Documentation
 -> Local Closure
 -> GitHub Closure

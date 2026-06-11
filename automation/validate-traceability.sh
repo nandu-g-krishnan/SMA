@@ -34,10 +34,12 @@ required_files=(
   "docs/validation/StrategyReadinessReport.md"
   "docs/validation/DataQualityReport.md"
   "docs/validation/CapitalProtectionReadinessReport.md"
+  "docs/validation/EngineeringStandardsComplianceReport.md"
   "docs/validation/BacklogCoverageReport.md"
   "docs/architecture/ArchitectureBaseline_v1.md"
   "docs/architecture/ArchitectureChangeRequest.md"
   "docs/implementation/ImplementationBaseline_v1.md"
+  "docs/governance/EngineeringArchitectureAndCodingStandards.md"
   "github/backlog/Dependencies.md"
   "github/backlog/BacklogCoverageReport.md"
   "github/backlog/BacklogBaseline_v1.md"
@@ -67,13 +69,25 @@ for relative_path in "${required_files[@]}"; do
   fi
 
   case "$relative_path" in
-    "docs/validation/StoryCompletenessReport.md"|"docs/validation/StrategyReadinessReport.md"|"docs/validation/DataQualityReport.md"|"docs/validation/CapitalProtectionReadinessReport.md"|"docs/validation/BacklogCoverageReport.md"|"github/backlog/BacklogCoverageReport.md"|"github/backlog/KiteBacklogCoverageReport.md")
+    "docs/validation/StoryCompletenessReport.md"|"docs/validation/StrategyReadinessReport.md"|"docs/validation/DataQualityReport.md"|"docs/validation/CapitalProtectionReadinessReport.md"|"docs/validation/EngineeringStandardsComplianceReport.md"|"docs/validation/BacklogCoverageReport.md"|"github/backlog/BacklogCoverageReport.md"|"github/backlog/KiteBacklogCoverageReport.md")
       if ! grep -Eq "Status:[[:space:]]*PASS" "$path"; then
         echo "Authorization report must be PASS: $relative_path" >&2
         failed=1
       fi
       ;;
   esac
+
+  if [[ "$relative_path" == "docs/governance/EngineeringArchitectureAndCodingStandards.md" ]]; then
+    if ! grep -Eq "Status:[[:space:]]*MANDATORY" "$path"; then
+      echo "Engineering architecture and coding standards must be MANDATORY." >&2
+      failed=1
+    fi
+
+    if ! grep -Eq "Priority:[[:space:]]*P0" "$path"; then
+      echo "Engineering architecture and coding standards must be P0." >&2
+      failed=1
+    fi
+  fi
 
   if [[ "$relative_path" == "docs/architecture/ArchitectureBaseline_v1.md" ]] && ! grep -Eq "Status[[:space:]]*=[[:space:]]*LOCKED" "$path"; then
     echo "Architecture baseline must be LOCKED." >&2

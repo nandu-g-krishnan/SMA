@@ -57,6 +57,34 @@ Kite Login
   -> 1 Minute Candle Generation
 ```
 
+## Mock-First MVP Rule
+
+Until real Kite credentials are supplied, implementation uses mock market data, replay fixtures, and deterministic sample instruments.
+
+Mock-mode evidence may validate system behavior, contracts, storage, aggregation, and UI flow. It may not be reported as live Kite validation or production trading readiness.
+
+## Kite Credential Timing
+
+Real Kite credentials are not needed for current foundation, reference-data modeling, database setup, mock market-data ingestion, or mock candle generation.
+
+The first real credential point is:
+
+```text
+I08-E01-F-KITE-S02: Implement Kite login URL endpoint
+```
+
+`I08-E01-F-KITE-S01` can be completed with placeholder configuration keys, environment-variable binding, secret redaction, and mock validation.
+
+Provide the real `api_key` before live validation of `I08-E01-F-KITE-S02`.
+
+Provide the real `api_secret` and request-token workflow access before live validation of:
+
+```text
+I08-E01-F-KITE-S03: Implement Kite request-token callback
+```
+
+Live instrument and tick data validation begins after the Kite authentication stories, when instrument sync and market-data streaming stories are selected.
+
 ## Forbidden Shortcuts
 
 - No AI before Feature Store.
@@ -65,6 +93,8 @@ Kite Login
 - No Execution before Paper Trading.
 - No Live Trading before CapitalProtectionReadinessReport = PASS.
 - No Architecture changes without ArchitectureChangeRequest approval.
+- No real Kite credential is required before `I08-E01-F-KITE-S02`; use mock data before that point.
+- No mock-mode result may be described as live Kite validation.
 
 ## Deterministic Trading Core
 
