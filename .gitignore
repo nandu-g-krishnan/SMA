@@ -1,6 +1,10 @@
 node_modules/
 package-lock.json
-package.json
 *.tmp
 *.log
 eng.traineddata
+bin/
+obj/
+dist/
+.angular/
+.env

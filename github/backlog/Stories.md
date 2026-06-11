@@ -12257,19 +12257,19 @@ Total stories: 650
 
 **Monitoring Requirements:** Success/failure counters, latency histogram, freshness gauge, structured logs, trace IDs, alert thresholds.
 
-## I04-E05-F01-S1: Build SPAN margin placeholder
+## I04-E05-F01-S1: Build SPAN margin model
 
 **Initiative:** Options And Futures Platform
 
 **Epic:** Margin and expiry risk
 
-**Feature:** SPAN margin placeholder
+**Feature:** SPAN margin model
 
 **Phase:** Institutional
 
 **Story Points:** 5
 
-**Description:** Implement build span margin placeholder as part of SPAN margin placeholder, with full traceability to the reference corpus and platform architecture.
+**Description:** Implement build span margin model as part of SPAN margin model, with full traceability to the reference corpus and platform architecture.
 
 **Business Value:** Enables a concrete institutional trading-platform capability required by research, trading, risk, execution, or operations.
 
@@ -12281,7 +12281,7 @@ Total stories: 650
 
 **Acceptance Criteria:**
 
-- Given valid source data and authorized access, When build span margin placeholder is executed, Then the platform persists the expected result with source references and calculation trace.
+- Given valid source data and authorized access, When build span margin model is executed, Then the platform persists the expected result with source references and calculation trace.
 - Given missing, stale, or invalid input data, When validation runs, Then the workflow fails safely with field-level errors and no unsafe downstream action.
 - Given the workflow completes, When the API or dashboard is queried, Then the user can see the result, status, timestamp, and source trace.
 - Given monitoring is enabled, When the workflow succeeds or fails, Then metrics, logs, and audit records are emitted with a correlation ID.
@@ -12300,19 +12300,19 @@ Total stories: 650
 
 **Monitoring Requirements:** Success/failure counters, latency histogram, freshness gauge, structured logs, trace IDs, alert thresholds.
 
-## I04-E05-F01-S2: Store SPAN margin placeholder
+## I04-E05-F01-S2: Store SPAN margin model
 
 **Initiative:** Options And Futures Platform
 
 **Epic:** Margin and expiry risk
 
-**Feature:** SPAN margin placeholder
+**Feature:** SPAN margin model
 
 **Phase:** Future
 
 **Story Points:** 8
 
-**Description:** Implement store span margin placeholder as part of SPAN margin placeholder, with full traceability to the reference corpus and platform architecture.
+**Description:** Implement store span margin model as part of SPAN margin model, with full traceability to the reference corpus and platform architecture.
 
 **Business Value:** Enables a concrete institutional trading-platform capability required by research, trading, risk, execution, or operations.
 
@@ -12324,7 +12324,7 @@ Total stories: 650
 
 **Acceptance Criteria:**
 
-- Given valid source data and authorized access, When store span margin placeholder is executed, Then the platform persists the expected result with source references and calculation trace.
+- Given valid source data and authorized access, When store span margin model is executed, Then the platform persists the expected result with source references and calculation trace.
 - Given missing, stale, or invalid input data, When validation runs, Then the workflow fails safely with field-level errors and no unsafe downstream action.
 - Given the workflow completes, When the API or dashboard is queried, Then the user can see the result, status, timestamp, and source trace.
 - Given monitoring is enabled, When the workflow succeeds or fails, Then metrics, logs, and audit records are emitted with a correlation ID.
@@ -12343,19 +12343,19 @@ Total stories: 650
 
 **Monitoring Requirements:** Success/failure counters, latency histogram, freshness gauge, structured logs, trace IDs, alert thresholds.
 
-## I04-E05-F01-S3: Validate SPAN margin placeholder
+## I04-E05-F01-S3: Validate SPAN margin model
 
 **Initiative:** Options And Futures Platform
 
 **Epic:** Margin and expiry risk
 
-**Feature:** SPAN margin placeholder
+**Feature:** SPAN margin model
 
 **Phase:** MVP
 
 **Story Points:** 13
 
-**Description:** Implement validate span margin placeholder as part of SPAN margin placeholder, with full traceability to the reference corpus and platform architecture.
+**Description:** Implement validate span margin model as part of SPAN margin model, with full traceability to the reference corpus and platform architecture.
 
 **Business Value:** Enables a concrete institutional trading-platform capability required by research, trading, risk, execution, or operations.
 
@@ -12367,7 +12367,7 @@ Total stories: 650
 
 **Acceptance Criteria:**
 
-- Given valid source data and authorized access, When validate span margin placeholder is executed, Then the platform persists the expected result with source references and calculation trace.
+- Given valid source data and authorized access, When validate span margin model is executed, Then the platform persists the expected result with source references and calculation trace.
 - Given missing, stale, or invalid input data, When validation runs, Then the workflow fails safely with field-level errors and no unsafe downstream action.
 - Given the workflow completes, When the API or dashboard is queried, Then the user can see the result, status, timestamp, and source trace.
 - Given monitoring is enabled, When the workflow succeeds or fails, Then metrics, logs, and audit records are emitted with a correlation ID.

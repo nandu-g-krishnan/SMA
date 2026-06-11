@@ -15,3 +15,5 @@ Architecture generation and validation must be separated:
 - Use `docs/planning/ArchitectureMasterPrompt.md` for architecture generation.
 - Use `docs/planning/ArchitectureValidationPrompt.md` after generation.
 - Follow `docs/planning/ArchitectureWorkflow.md` for the project sequence.
+
+Architecture phase output is captured in the numbered document set `docs/architecture/01_SystemArchitecture.md` through `docs/architecture/20_ArchitectureDecisionRecords.md`, plus `docs/architecture/ArchitectureTraceabilityMatrix.md`, `docs/architecture/ArchitectureReadinessReport.md`, and `docs/architecture/PaidDependencies.md`.

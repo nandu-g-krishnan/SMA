@@ -95,7 +95,7 @@
 - I04-E04-F02: Basis tracker (Futures analytics)
 - I04-E04-F03: Rollover (Futures analytics)
 - I04-E04-F04: Cost of carry (Futures analytics)
-- I04-E05-F01: SPAN margin placeholder (Margin and expiry risk)
+- I04-E05-F01: SPAN margin model (Margin and expiry risk)
 - I04-E05-F02: Expiry calendar (Margin and expiry risk)
 - I04-E05-F03: Assignment risk (Margin and expiry risk)
 - I04-E05-F04: MTM risk (Margin and expiry risk)

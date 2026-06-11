@@ -1,0 +1,25 @@
+# I08-E01-F-KITE-S12-INTEGRATION-CONTRACT-TEST-TASK: Integration Contract Test Task for I08-E01-F-KITE-S12
+
+Type: Task
+
+
+
+Parent Story: I08-E01-F-KITE-S12
+
+KnowledgeIds: SMA-KITE-0012
+
+Knowledge Source: Kite_API
+
+Source Documents: docs/KITE/kite documentation.md
+
+Architecture Components: Execution Safety Adapter
+
+Task Objective: Complete integration contract test task for I08-E01-F-KITE-S12: Implement guarded Kite order placement adapter.
+
+Acceptance Criteria:
+
+- Parent story traceability remains intact.
+- Required evidence is added to code, tests, documentation, or validation reports as appropriate.
+- No source contradiction is introduced.
+
+Status: Local backlog mirror generated; GitHub sync may be pending due to API limits.

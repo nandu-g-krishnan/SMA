@@ -1,0 +1,56 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${SMA_POSTGRES_DB:-sma}
+      POSTGRES_USER: ${SMA_POSTGRES_USER:-sma}
+      POSTGRES_PASSWORD: ${SMA_POSTGRES_PASSWORD:-sma_dev_password}
+    ports:
+      - "${SMA_POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - sma_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${SMA_POSTGRES_USER:-sma} -d ${SMA_POSTGRES_DB:-sma}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "${SMA_REDIS_PORT:-6379}:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/SMA.Api/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${SMA_ENVIRONMENT:-Development}
+      SMA__Postgres__ConnectionString: Host=postgres;Port=5432;Database=${SMA_POSTGRES_DB:-sma};Username=${SMA_POSTGRES_USER:-sma};Password=${SMA_POSTGRES_PASSWORD:-sma_dev_password}
+      SMA__Redis__ConnectionString: redis:6379
+      SMA__Kite__ApiKey: ${SMA_KITE_API_KEY:-}
+      SMA__Kite__RedirectUrl: ${SMA_KITE_REDIRECT_URL:-http://localhost:5080/api/auth/kite/callback}
+    ports:
+      - "${SMA_API_PORT:-5080}:8080"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  web:
+    build:
+      context: apps/web
+      dockerfile: Dockerfile
+    ports:
+      - "${SMA_WEB_PORT:-4200}:4200"
+    depends_on:
+      - api
+
+volumes:
+  sma_postgres_data:

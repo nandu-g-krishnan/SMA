@@ -1,0 +1,18 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.0.0.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMA.Api", "apps\api\SMA.Api\SMA.Api.csproj", "{2F1E6A0F-B046-4F2C-8B45-8ED9F9BE0B01}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F1E6A0F-B046-4F2C-8B45-8ED9F9BE0B01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F1E6A0F-B046-4F2C-8B45-8ED9F9BE0B01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F1E6A0F-B046-4F2C-8B45-8ED9F9BE0B01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F1E6A0F-B046-4F2C-8B45-8ED9F9BE0B01}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

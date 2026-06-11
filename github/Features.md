@@ -760,7 +760,7 @@
 
 **Source References:** Module-5_Options-Theory-for-Professional-Trading.pdf
 
-## I04-E05-F01: SPAN margin placeholder
+## I04-E05-F01: SPAN margin model
 
 **Initiative:** Options And Futures Platform
 

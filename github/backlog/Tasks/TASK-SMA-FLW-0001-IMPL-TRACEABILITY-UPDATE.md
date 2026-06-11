@@ -1,0 +1,25 @@
+# TASK-SMA-FLW-0001-IMPL-TRACEABILITY-UPDATE: Traceability Update for FII and DII flows
+
+Type: Task
+
+Task Id: TASK-SMA-FLW-0001-IMPL-TRACEABILITY-UPDATE
+
+Parent Story: STORY-SMA-FLW-0001-IMPL
+
+KnowledgeIds: SMA-FLW-0001
+
+Knowledge Source: Market_Strategy
+
+Source Document: idirect_marketstrategy_2026.pdf
+
+Architecture Component: Institutional Flow Engine, Feature Store
+
+Objective: Complete traceability update evidence for STORY-SMA-FLW-0001-IMPL.
+
+Acceptance Criteria:
+
+- Evidence is source-backed.
+- Traceability remains intact.
+- No contradiction with MasterKnowledgeBase or catalogs is introduced.
+
+Status: Local backlog generated; GitHub sync may be pending due to API limits.
