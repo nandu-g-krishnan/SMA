@@ -48,6 +48,7 @@ $requiredFiles = @(
   "docs/implementation/ImplementationBaseline_v1.md",
   "docs/implementation/StoryExecutionDashboard.md",
   "docs/implementation/ExecutionMetrics.md",
+  "docs/governance/MasterUniversalStoryImplementationOperatingSystem.md",
   "docs/governance/StoryLifecycleGovernanceRules.md",
   "docs/governance/ImplementationExecutionRules.md",
   "github/backlog/Dependencies.md",
@@ -143,6 +144,31 @@ foreach ($relativePath in $requiredFiles) {
     )) {
       if ($content -notmatch [regex]::Escape($rule)) {
         [Console]::Error.WriteLine("Implementation execution rules are missing rule: $rule")
+        $failed = $true
+      }
+    }
+  }
+
+  if ($relativePath -eq "docs/governance/MasterUniversalStoryImplementationOperatingSystem.md") {
+    if ($content -notmatch "Status:\s*MANDATORY") {
+      [Console]::Error.WriteLine("Master universal story implementation operating system must be MANDATORY.")
+      $failed = $true
+    }
+
+    foreach ($rule in @(
+      "Repository Is The Source Of Truth",
+      "P0 Rule: Knowledge First",
+      "Load Project Governance",
+      "Load Execution Dashboard",
+      "Generate Implementation Context",
+      "Knowledge Validation",
+      "Build Validation",
+      "Test Validation",
+      "Anti-Shortcut Rules",
+      "Validated, tested, secure, audited, traceable completion is completion"
+    )) {
+      if ($content -notmatch [regex]::Escape($rule)) {
+        [Console]::Error.WriteLine("Master operating system is missing required section/rule: $rule")
         $failed = $true
       }
     }
