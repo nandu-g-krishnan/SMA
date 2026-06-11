@@ -7,9 +7,9 @@ Generated: 2026-06-11T08:32:40.285Z
 | Metric | Value |
 | --- | ---: |
 | Total Stories | 1812 |
-| Completed Stories | 4 |
+| Completed Stories | 5 |
 | Blocked Stories | 0 |
-| Ready Stories | 1808 |
+| Ready Stories | 1807 |
 | Failed Stories | 0 |
 | Coverage % | 100% |
 

@@ -1,0 +1,21 @@
+<div class="app-shell">
+  <app-product-navigation></app-product-navigation>
+  
+  <div class="shell-content">
+    <header class="shell-header" *ngIf="navigationReady">
+      <div class="header-brand">SMA Trading Platform</div>
+      <div class="header-actions">
+        <button class="header-btn">Settings</button>
+        <button class="header-btn">Profile</button>
+      </div>
+    </header>
+
+    <main class="shell-main" *ngIf="contentReady">
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer class="shell-footer">
+      <span class="footer-text">&copy; 2026 SMA Trading Platform. All rights reserved.</span>
+    </footer>
+  </div>
+</div>
