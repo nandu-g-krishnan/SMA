@@ -7,9 +7,9 @@ Generated: 2026-06-11T08:32:40.285Z
 | Metric | Value |
 | --- | ---: |
 | Total Stories | 1812 |
-| Completed Stories | 1 |
+| Completed Stories | 2 |
 | Blocked Stories | 0 |
-| Ready Stories | 1811 |
+| Ready Stories | 1810 |
 | Failed Stories | 0 |
 | Coverage % | 100% |
 
@@ -99,7 +99,7 @@ Generated: 2026-06-11T08:32:40.285Z
 | Order management | 8 | 0 | 0% |
 | Paper trading | 8 | 0 | 0% |
 | Pattern catalog coverage | 90 | 0 | 0% |
-| Platform foundation | 12 | 1 | 8.33% |
+| Platform foundation | 12 | 2 | 16.67% |
 | Portfolio catalog coverage | 40 | 0 | 0% |
 | Portfolio construction | 12 | 0 | 0% |
 | Position reconciliation | 8 | 0 | 0% |

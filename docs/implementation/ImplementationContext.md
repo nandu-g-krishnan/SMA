@@ -2,19 +2,20 @@
 
 Status: ACTIVE
 
-Story: `I01-E01-F01-S1: Store Repository baseline`
+Story: `I01-E01-F01-S2: Validate Repository baseline`
 
 ## Story Metadata
 
 | Field | Value |
 | --- | --- |
-| Story Id | `I01-E01-F01-S1` |
-| KnowledgeIds | `SMA-KNW-0018` |
-| Knowledge Concept | Technical analysis assumptions: market discounts everything, market moves in trends, history repeats |
+| Story Id | `I01-E01-F01-S2` |
+| KnowledgeIds | Mapped through SourceTraceabilityMatrix |
+| Knowledge Source | TA_Workbook |
 | Initiative | Trading Core Platform |
 | Epic | Platform foundation |
 | Feature | Repository baseline |
 | Architecture Component | Trading Core Platform Foundation |
+| Upstream Dependency | I01-E01-F01-S1 (CLOSED) |
 
 ## Source Documents
 
@@ -25,11 +26,39 @@ Story: `I01-E01-F01-S1: Store Repository baseline`
 - `research/ingestion-audit/Everything_you_need_to_know_about_investing-Advanced_series_eBook.md`
 - `research/ingestion-audit/Idenitfying-Chart-Patterns.md`
 
+## Dependencies Validation
+
+| Dependency | Required | Status |
+| --- | --- | --- |
+| Product vision | Yes | PRESENT |
+| Architecture baseline | Yes | LOCKED v1 |
+| Domain model | Yes | PRESENT |
+| PostgreSQL schema | Yes | PRESENT |
+| ASP.NET Core API | Yes | PRESENT (apps/api/SMA.Api/) |
+| Angular UI | Yes | PRESENT (apps/web/) |
+| Monitoring baseline | Yes | PRESENT |
+| Story I01-E01-F01-S1 | Yes | CLOSED |
+
+## Validation Scope
+
+**Task:** Validate repository baseline implementation from S1
+
+**Validation Areas:**
+- API endpoint `/api/foundation/repository-baseline` existence and correctness
+- Response contract compliance
+- Error handling (missing, stale, invalid data)
+- Audit trail logging
+- Source document traceability
+- Knowledge compliance
+- Architecture compliance
+- Security controls
+- Data quality gates
+- Capital protection gates
+
 ## Files Expected To Change
 
-- `apps/api/SMA.Api/Program.cs`
-- `automation/test-foundation-baseline.ps1`
-- `docs/traceability/SourceTraceabilityMatrix.md`
+- `tests/SMA.Api.Tests/` (validator unit tests)
+- `apps/api/SMA.Api/` (validation endpoint implementation)
 - `docs/traceability/ImplementationTraceabilityMatrix.md`
 - `docs/validation/StoryKnowledgeValidationReport.md`
 - `docs/validation/StoryAuditReport.md`
@@ -40,14 +69,24 @@ Story: `I01-E01-F01-S1: Store Repository baseline`
 - `docs/implementation/StoryExecutionDashboard.md`
 - `docs/implementation/ExecutionMetrics.md`
 
-## Acceptance Criteria
+## Acceptance Criteria (All Required for Closure)
 
 - Knowledge Validation: PASS
 - Source Validation: PASS
 - PDF Compliance Validation: PASS
+- Kite Documentation Compliance Validation: PASS
 - Architecture Validation: PASS
 - Traceability Validation: PASS
 - Testing Validation: PASS
+- Documentation Validation: PASS
+- Master Knowledge Base Validation: PASS
+- Signal Catalog Validation: PASS
+- Feature Catalog Validation: PASS
+- Strategy Catalog Validation: PASS
+- Risk Catalog Validation: PASS
+- AI Governance Validation: PASS
+- Data Quality Validation: PASS
+- Capital Protection Validation: PASS
 - Documentation Validation: PASS
 - Data Quality Validation: PASS
 - Capital Protection Validation: PASS
