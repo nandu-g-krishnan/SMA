@@ -2,14 +2,14 @@
 
 Status: ACTIVE
 
-Generated: 2026-06-11T08:09:22.883Z
+Generated: 2026-06-11T08:32:40.285Z
 
 | Metric | Value |
 | --- | ---: |
 | Total Stories | 1812 |
-| Completed Stories | 0 |
+| Completed Stories | 1 |
 | Blocked Stories | 0 |
-| Ready Stories | 1812 |
+| Ready Stories | 1811 |
 | Failed Stories | 0 |
 | Coverage % | 100% |
 
@@ -99,7 +99,7 @@ Generated: 2026-06-11T08:09:22.883Z
 | Order management | 8 | 0 | 0% |
 | Paper trading | 8 | 0 | 0% |
 | Pattern catalog coverage | 90 | 0 | 0% |
-| Platform foundation | 12 | 0 | 0% |
+| Platform foundation | 12 | 1 | 8.33% |
 | Portfolio catalog coverage | 40 | 0 | 0% |
 | Portfolio construction | 12 | 0 | 0% |
 | Position reconciliation | 8 | 0 | 0% |
@@ -172,4 +172,4 @@ Generated: 2026-06-11T08:09:22.883Z
 | Sentiment Platform | 40 | 0 | 0% |
 | Strategy Platform | 50 | 0 | 0% |
 | Technical Analysis Platform | 90 | 0 | 0% |
-| Trading Core Platform | 72 | 0 | 0% |
+| Trading Core Platform | 72 | 1 | 1.39% |

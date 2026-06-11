@@ -4,6 +4,12 @@ Status: PASS
 
 The local backlog is the source of truth. GitHub Project V2 is a generated project-management view.
 
+## Execution Update
+
+| Story Id | KnowledgeId | Status | Evidence |
+| --- | --- | --- | --- |
+| I01-E01-F01-S1 | SMA-KNW-0018 | Closed | Repository baseline implemented, validated, audited, secured, accepted, traced, and moved to `github/backlog/Completed/` |
+
 | KnowledgeId | Epic | Feature | Story | Status |
 | --- | --- | --- | --- | --- |
 | SMA-KNW-0001 | I08-E01 Zerodha integration | I08-E01-F-KITE Kite Connect foundation | I08-E01-F-KITE-S01 | Mapped |
@@ -236,4 +242,3 @@ The local backlog is the source of truth. GitHub Project V2 is a generated proje
 | SMA-IND-0030 | I03-E02 Volume analytics | MFI | I03-E02-F04-S1 to I03-E02-F04-S3 | Mapped |
 | SMA-IND-0031 | I03-E02 Volume analytics | OBV | I03-E02-F01-S1 to I03-E02-F01-S3 | Mapped |
 | SMA-IND-0032 | I03-E02 Volume analytics | PVT | I03-E02-F03-S1 to I03-E02-F03-S3 | Mapped |
-

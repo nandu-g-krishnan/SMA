@@ -73,6 +73,12 @@ powershell -ExecutionPolicy Bypass -File automation\sync-github-project-v2.ps1
 
 GitHub Project remains a generated view. Local backlog files remain authoritative.
 
+## Story Closure Sync
+
+| Story Id | GitHub Issue | Local Status | GitHub Status | Project V2 Status |
+| --- | --- | --- | --- | --- |
+| I01-E01-F01-S1 | #319 | Closed | Closed | Project field sync pending |
+
 ## Local Completion Override
 
 Backlog completion is not blocked by GitHub limits.

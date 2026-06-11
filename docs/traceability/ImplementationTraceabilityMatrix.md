@@ -18,6 +18,7 @@ Implementation rows are generated from PDF-derived KnowledgeIds and existing bac
 | SMA-CAN-0004 | CAN-EVENING-STAR-S1 | src/candlestick-engine/evening-star | /api/candlestick/evening-star | candlestick_evening_star | candlestick-evening-star-view | candlestick/evening-star.traceability.spec | Mapped for implementation planning |
 | SMA-CAN-0005 | CAN-HAMMER-S1 | src/candlestick-engine/hammer | /api/candlestick/hammer | candlestick_hammer | candlestick-hammer-view | candlestick/hammer.traceability.spec | Mapped for implementation planning |
 | SMA-CAN-0006 | CAN-HARAMI-S1 | src/candlestick-engine/harami | /api/candlestick/harami | candlestick_harami | candlestick-harami-view | candlestick/harami.traceability.spec | Mapped for implementation planning |
+| SMA-KNW-0018 | I01-E01-F01-S1 | apps/api/SMA.Api/Program.cs; automation/test-foundation-baseline.ps1 | /api/foundation/repository-baseline | repository_baseline_target | foundation-repository-baseline-view | automation/test-foundation-baseline.ps1 | Implemented |
 | SMA-CAN-0007 | CAN-MARUBOZU-S1 | src/candlestick-engine/marubozu | /api/candlestick/marubozu | candlestick_marubozu | candlestick-marubozu-view | candlestick/marubozu.traceability.spec | Mapped for implementation planning |
 | SMA-CAN-0008 | CAN-MORNING-STAR-S1 | src/candlestick-engine/morning-star | /api/candlestick/morning-star | candlestick_morning_star | candlestick-morning-star-view | candlestick/morning-star.traceability.spec | Mapped for implementation planning |
 | SMA-CAN-0009 | CAN-PIERCING-LINE-S1 | src/candlestick-engine/piercing-line | /api/candlestick/piercing-line | candlestick_piercing_line | candlestick-piercing-line-view | candlestick/piercing-line.traceability.spec | Mapped for implementation planning |
@@ -236,4 +237,3 @@ Implementation rows are generated from PDF-derived KnowledgeIds and existing bac
 | SMA-IND-0030 | I03-E02-F04-S1 to I03-E02-F04-S3 | src/volume-analytics-feature-store/money-flow-index | /api/volume/money-flow-index | volume_money_flow_index | volume-money-flow-index-view | volume/money-flow-index.traceability.spec | Mapped for implementation planning |
 | SMA-IND-0031 | I03-E02-F01-S1 to I03-E02-F01-S3 | src/volume-analytics-feature-store/obv | /api/volume/obv | volume_obv | volume-obv-view | volume/obv.traceability.spec | Mapped for implementation planning |
 | SMA-IND-0032 | I03-E02-F03-S1 to I03-E02-F03-S3 | src/volume-analytics-feature-store/pvt | /api/volume/pvt | volume_pvt | volume-pvt-view | volume/pvt.traceability.spec | Mapped for implementation planning |
-

@@ -2,6 +2,12 @@
 
 Status: PASS
 
+## Execution Update
+
+| Story Id | KnowledgeId | Status | Evidence |
+| --- | --- | --- | --- |
+| I01-E01-F01-S1 | SMA-KNW-0018 | Closed | Repository baseline implemented, validated, audited, secured, accepted, traced, and moved to `github/backlog/Completed/` |
+
 Pass criteria:
 
 - 100% KnowledgeIds mapped to backlog
@@ -241,4 +247,3 @@ Pass criteria:
 | SMA-IND-0030 | I03-E02 Volume analytics | MFI | I03-E02-F04-S1 to I03-E02-F04-S3 | Mapped |
 | SMA-IND-0031 | I03-E02 Volume analytics | OBV | I03-E02-F01-S1 to I03-E02-F01-S3 | Mapped |
 | SMA-IND-0032 | I03-E02 Volume analytics | PVT | I03-E02-F03-S1 to I03-E02-F03-S3 | Mapped |
-

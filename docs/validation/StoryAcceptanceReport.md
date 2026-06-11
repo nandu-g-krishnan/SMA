@@ -1,19 +1,21 @@
 # Story Acceptance Report
 
-Status: REQUIRED BEFORE CLOSURE
+Status: PASS
+
+Story: `I01-E01-F01-S1: Store Repository baseline`
 
 ## Required Acceptance Checks
 
-| Acceptance Check | Required Result | Evidence |
+| Acceptance Check | Result | Evidence |
 | --- | --- | --- |
-| Acceptance Criteria | PASS | Required before story closure |
-| Definition Of Done | PASS | Required before story closure |
-| KnowledgeIds | PASS | Required before story closure |
-| PDF Compliance | PASS | Required before story closure |
-| Kite Documentation Compliance | PASS | Required before story closure |
-| Architecture Compliance | PASS | Required before story closure |
-| Testing Compliance | PASS | Required before story closure |
+| Acceptance Criteria | PASS | Repository baseline can be queried through `/api/foundation/repository-baseline` |
+| Definition Of Done | PASS | Implementation, documentation, traceability, build, smoke test, audit, security, and acceptance evidence complete |
+| KnowledgeIds | PASS | Response includes `SMA-KNW-0018` |
+| PDF Compliance | PASS | Mapped source documents are preserved in response metadata and validation report |
+| Kite Documentation Compliance | PASS | Story does not implement Kite behavior; no Kite contract changed |
+| Architecture Compliance | PASS | Endpoint supports Phase 1 Foundation Platform and does not alter locked architecture |
+| Testing Compliance | PASS | `automation/test-foundation-baseline.ps1` passed |
 
 ## Closure Gate
 
-Story closure is blocked until acceptance validation has PASS evidence.
+Acceptance evidence is complete for this story.

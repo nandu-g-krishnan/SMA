@@ -18,6 +18,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddSingleton<BrokerSessionState>();
 builder.Services.AddSingleton<InstrumentSyncState>();
 builder.Services.AddSingleton<TickStore>();
+builder.Services.AddSingleton<RepositoryBaselineStore>();
 
 var app = builder.Build();
 
@@ -74,6 +75,8 @@ app.MapGet("/api/foundation/configuration", (IConfiguration configuration) => Re
         firstMilestone = "Kite Login -> Instrument Sync -> Live Tick Stream -> PostgreSQL Tick Storage -> 1m Candle Generation"
     }
 }));
+
+app.MapGet("/api/foundation/repository-baseline", (RepositoryBaselineStore store) => Results.Ok(store.GetBaseline()));
 
 app.MapGet("/api/auth/kite/login-url", (IConfiguration configuration) =>
 {
@@ -346,12 +349,61 @@ internal sealed class TickStore
     }
 }
 
+internal sealed class RepositoryBaselineStore
+{
+    private readonly RepositoryBaselineRecord baseline = new(
+        "I01-E01-F01-S1",
+        "Repository baseline",
+        "SMA-KNW-0018",
+        "Technical analysis assumptions: market discounts everything, market moves in trends, history repeats",
+        "Trading Core Platform",
+        "Platform foundation",
+        "Repository baseline",
+        "Trading Core Platform Foundation",
+        new[]
+        {
+            "4823_Technical Analysis.pdf",
+            "Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf",
+            "Idenitfying-Chart-Patterns.pdf"
+        },
+        new[]
+        {
+            "docs/master-data/MasterKnowledgeBase.md",
+            "docs/traceability/SourceTraceabilityMatrix.md",
+            "docs/traceability/ImplementationTraceabilityMatrix.md",
+            "docs/architecture/ArchitectureBaseline_v1.md",
+            "docs/governance/MasterUniversalStoryImplementationOperatingSystem.md"
+        },
+        "LOCKED",
+        "APPROVED",
+        "Traceable repository baseline stored for Epic 001 Foundation Platform.",
+        DateTimeOffset.Parse("2026-06-11T00:00:00Z", CultureInfo.InvariantCulture));
+
+    public RepositoryBaselineRecord GetBaseline() => baseline;
+}
+
 internal sealed record KiteLoginResponse(
     string LoginUrl,
     string RedirectUrl,
     string ApiVersion,
     string KnowledgeId,
     string SourceDocument);
+
+internal sealed record RepositoryBaselineRecord(
+    string StoryId,
+    string StoryName,
+    string KnowledgeId,
+    string KnowledgeConcept,
+    string Initiative,
+    string Epic,
+    string Feature,
+    string ArchitectureComponent,
+    IReadOnlyList<string> SourceDocuments,
+    IReadOnlyList<string> TraceabilityArtifacts,
+    string ArchitectureStatus,
+    string ImplementationAuthorization,
+    string AuditNote,
+    DateTimeOffset StoredUtc);
 
 internal sealed record TickInput(
     long InstrumentToken,
