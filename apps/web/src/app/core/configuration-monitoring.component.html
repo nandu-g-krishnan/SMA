@@ -1,0 +1,88 @@
+<div class="configuration-monitoring">
+  <header class="monitoring-header">
+    <h2>Configuration Registry Monitoring</h2>
+    <div class="header-actions">
+      <button class="btn btn-refresh" (click)="refreshMetrics()" [disabled]="isLoading">
+        {{ isLoading ? 'Loading...' : 'Refresh' }}
+      </button>
+      <button class="btn btn-export" (click)="exportChangeHistory()">Export</button>
+    </div>
+  </header>
+
+  <div class="monitoring-content">
+    <section class="metrics-section" *ngIf="metrics && !isLoading">
+      <div class="metric-card">
+        <h3>Total Configurations</h3>
+        <p class="metric-value">{{ metrics.totalConfigurations }}</p>
+      </div>
+      <div class="metric-card">
+        <h3>Changes (Last Hour)</h3>
+        <p class="metric-value">{{ metrics.changeFrequency }}</p>
+      </div>
+      <div class="metric-card">
+        <h3>Last Modified</h3>
+        <p class="metric-time">{{ metrics.lastModified | date:'short' }}</p>
+      </div>
+    </section>
+
+    <section class="history-section">
+      <div class="history-controls">
+        <div class="search-box">
+          <input type="text" placeholder="Search by config key..." 
+                 (input)="onSearch($event.target.value)" class="search-input">
+        </div>
+        <div class="filter-section">
+          <button class="filter-btn" (click)="onFilterChange(null)" 
+                  [class.active]="!filterChangeType">All</button>
+          <button class="filter-btn" (click)="onFilterChange('create')" 
+                  [class.active]="filterChangeType === 'create'">Create</button>
+          <button class="filter-btn" (click)="onFilterChange('update')" 
+                  [class.active]="filterChangeType === 'update'">Update</button>
+          <button class="filter-btn" (click)="onFilterChange('delete')" 
+                  [class.active]="filterChangeType === 'delete'">Delete</button>
+        </div>
+      </div>
+
+      <div class="change-history" *ngIf="getFilteredHistory().length > 0; else emptyHistory">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Type</th>
+              <th>Config Key</th>
+              <th>Previous Value</th>
+              <th>New Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let event of getFilteredHistory()">
+              <td class="cell-timestamp">{{ event.timestamp | date:'short' }}</td>
+              <td class="cell-type">
+                <span class="badge" [ngClass]="getChangeTypeBadgeClass(event.changeType)">
+                  {{ event.changeType }}
+                </span>
+              </td>
+              <td class="cell-key">{{ event.configKey }}</td>
+              <td class="cell-value">
+                <span class="value-text" [title]="event.previousValue | json">
+                  {{ (event.previousValue | json) | slice:0:30 }}
+                </span>
+              </td>
+              <td class="cell-value">
+                <span class="value-text" [title]="event.newValue | json">
+                  {{ (event.newValue | json) | slice:0:30 }}
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #emptyHistory>
+        <div class="empty-history">
+          <p>No configuration changes found</p>
+        </div>
+      </ng-template>
+    </section>
+  </div>
+</div>
