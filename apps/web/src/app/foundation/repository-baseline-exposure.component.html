@@ -1,0 +1,60 @@
+<div class="repository-baseline-exposure">
+  <div class="header">
+    <h2>Repository Baseline</h2>
+    <div class="actions">
+      <button (click)="refreshBaseline()" [disabled]="loading" class="btn-refresh">
+        {{ loading ? 'Loading...' : 'Refresh' }}
+      </button>
+      <button (click)="downloadBaseline()" [disabled]="!baselineData" class="btn-download">
+        Download
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="error-message">
+    <p>{{ error }}</p>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <p>Loading repository baseline...</p>
+  </div>
+
+  <div *ngIf="baselineData && !loading" class="baseline-content">
+    <div class="baseline-info">
+      <div class="info-item">
+        <label>Version:</label>
+        <span>{{ baselineData.version }}</span>
+      </div>
+      <div class="info-item">
+        <label>Status:</label>
+        <span [class]="'status-' + baselineData.status">{{ baselineData.status }}</span>
+      </div>
+      <div class="info-item">
+        <label>Timestamp:</label>
+        <span>{{ baselineData.timestamp }}</span>
+      </div>
+      <div class="info-item">
+        <label>Source Trace:</label>
+        <span class="trace-id">{{ baselineData.sourceTrace }}</span>
+      </div>
+    </div>
+
+    <div class="baseline-metadata">
+      <h3>Metadata</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let key of (baselineData.metadata | keyvalue)">
+            <td>{{ key.key }}</td>
+            <td>{{ key.value }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
