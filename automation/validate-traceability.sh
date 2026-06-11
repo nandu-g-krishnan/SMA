@@ -46,6 +46,7 @@ required_files=(
   "github/backlog/KiteStories.md"
   "github/backlog/KiteBacklogCoverageReport.md"
   "github/import/kite-stories.csv"
+  "github/backlog/StoryRegistry.md"
 )
 
 failed=0
@@ -92,6 +93,15 @@ for relative_path in "${required_files[@]}"; do
   if [[ "$relative_path" == "docs/architecture/ArchitectureBaseline_v1.md" ]] && ! grep -Eq "Status[[:space:]]*=[[:space:]]*LOCKED" "$path"; then
     echo "Architecture baseline must be LOCKED." >&2
     failed=1
+  fi
+
+  if [[ "$relative_path" == "github/backlog/StoryRegistry.md" ]]; then
+    for column in "Story Id" "KnowledgeIds" "GitHub Issue" "Local Story File" "Implementation Status" "Audit Status" "Security Status" "Acceptance Status" "Traceability Result" "Commit Hash" "Closure Date" "Closure Status"; do
+      if ! grep -Fq "$column" "$path"; then
+        echo "Story registry is missing required column: $column" >&2
+        failed=1
+      fi
+    done
   fi
 
   case "$relative_path" in

@@ -294,36 +294,49 @@ AI may not bypass:
 - Model governance
 - Approval workflow
 
-## MVP Testing Priority Rule
+## Testing Priority Order
 
-During MVP, implementation should prioritize working capability and evidence over exhaustive unit-test coverage.
+SMA is a trading system, not a CRUD application.
 
-P0 validation remains mandatory:
+A perfectly unit-tested system can still lose money if market-data flow, indicator calculations, signal generation, strategy logic, risk controls, execution flow, or broker integration fail in combination.
 
-- Build validation
-- Smoke validation
-- Integration or contract validation for external boundaries
-- Security review
-- Acceptance review
-- Traceability review
-- Documentation evidence
+Prioritize system validation, business validation, and trading validation over high unit-test percentages.
 
-Unit tests are P2 for non-trading foundation stories when the behavior is already covered by build, smoke, and manual validation evidence.
+P0:
 
-Unit tests remain P0 when implementing:
+- Integration tests
+- End-to-end flow validation
+- Business rule validation
+- Risk validation
+- Data quality validation
+- Kite integration validation
 
-- Kite authentication/session handling
-- Market data ingestion
-- Candle aggregation
-- Data quality logic
-- Feature Store calculations
+P1:
+
+- Unit tests
+
+P2:
+
+- Performance tests
+
+P3:
+
+- Advanced coverage expansion
+
+## Mandatory Trading Flow Coverage
+
+For critical trading flows, require integration tests, scenario tests, historical validation, and paper-trading validation before focusing on unit-test percentages.
+
+Critical flows:
+
+- Market Data
+- Feature Store
 - Indicators
 - Signals
 - Strategies
-- Risk controls
-- Execution controls
-- Capital protection
-- AI governance logic
+- Risk
+- Execution
+- Capital Protection
 
 If unit tests are deferred, create or update `docs/validation/ManualTestChecklist.md` with exact manual checks and expected results. Do not mark unexecuted tests as PASS.
 
@@ -337,16 +350,121 @@ Real Kite validation begins only when credentials are supplied and the relevant 
 
 ## Documentation Standards
 
-Every implementation story must update documentation when behavior, configuration, APIs, data contracts, or operational procedures change.
+SMA is a trading system, not a documentation system.
 
-At minimum, document:
+Prefer:
 
-- Configuration
-- Commands
+- Correct architecture
+- Correct calculations
+- Correct risk controls
+- Correct execution behavior
+- Correct integrations
+
+over generating excessive story-level documentation.
+
+Every implementation story must update documentation only when behavior, configuration, APIs, data contracts, architecture, traceability, master data, or operational procedures change.
+
+Allowed document updates when impacted:
+
+- Architecture documents
+- Implementation traceability
+- Master data
+- API docs
+- Execution dashboard
+- Story registry
+- Centralized validation reports
+
+Do not generate new documentation simply because a story was completed.
+
+Documentation should support implementation, not dominate implementation.
+
+Priority order:
+
+1. Knowledge Integrity
+2. Architecture Compliance
+3. Trading Logic Correctness
+4. Risk Protection
+5. Data Quality
+6. Integration Validation
+7. Documentation Updates
+
+## Repository Source Of Truth
+
+The following are authoritative:
+
+- `github/backlog/StoryRegistry.md`
+- `docs/implementation/StoryExecutionDashboard.md`
+- `docs/implementation/ExecutionMetrics.md`
+- `docs/traceability/ImplementationTraceabilityMatrix.md`
+- `docs/traceability/SourceTraceabilityMatrix.md`
+
+GitHub Issues and GitHub Project V2 are synchronized execution views.
+
+## Centralized Validation Model
+
+Maintain cumulative validation repositories:
+
+- `docs/validation/StoryAuditReport.md`
+- `docs/validation/StorySecurityReport.md`
+- `docs/validation/StoryAcceptanceReport.md`
+- `docs/validation/StoryTraceabilityReport.md`
+- `docs/validation/EngineeringStandardsComplianceReport.md`
+
+Each completed story adds or updates an entry with:
+
+- Story Id
+- Status
+- Audit Result
+- Security Result
+- Acceptance Result
+- Traceability Result
+- Timestamp
 - Evidence
-- Known limitations
-- Mock/live mode distinction
-- Traceability references
+
+Do not create separate per-story validation files for:
+
+- StoryAuditReport
+- StorySecurityReport
+- StoryAcceptanceReport
+- StoryTraceabilityReport
+- StoryKnowledgeValidationReport
+
+## Story Closure Evidence Rule
+
+For every completed story, store evidence in `github/backlog/StoryRegistry.md`.
+
+Required registry columns:
+
+- Story Id
+- KnowledgeIds
+- Status
+- Implementation Result
+- Audit Result
+- Security Result
+- Acceptance Result
+- Traceability Result
+- Commit Hash
+- GitHub Issue
+- Closure Date
+
+## New Closure Gate
+
+A story closes when:
+
+- Knowledge Validation PASS
+- Architecture Compliance PASS
+- Integration Validation PASS
+- Business Validation PASS
+- Risk Validation PASS
+- Security PASS
+- Acceptance PASS
+- Traceability PASS
+- Engineering Standards PASS
+- Documentation Updated if impacted
+- ImplementationTraceabilityMatrix Updated
+- StoryRegistry Updated
+
+Unit tests are recommended but are not the primary success criterion.
 
 ## Engineering Compliance Gate
 
@@ -364,6 +482,9 @@ The report must include:
 - Modular boundary compliance
 - Mock/live data mode
 - Testing priority decision
+- Integration validation result
+- Business validation result
+- Risk validation result
 - Kite compliance when applicable
 - Security compliance
 - Traceability compliance

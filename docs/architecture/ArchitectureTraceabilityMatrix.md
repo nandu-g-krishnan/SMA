@@ -36,7 +36,7 @@ No story should be orphaned. Every story maps to at least one architecture compo
 | Broker And Execution | I08 Execution And Broker Platform | I08-E01 to I08-E06 | Kite, orders, safety, reconciliation, paper, multi-broker | I08-E01-F01-S1 to I08-E06-F04-S2 |
 | News And Sentiment | I09 News And Sentiment Platform | I09-E01 to I09-E06 | Ingestion, announcements, sentiment, events, macro news, alerts | I09-E01-F01-S1 to I09-E06-F04-S2 |
 | Backtesting And WFO | I10 Institutional Analytics Platform | I10-E01 to I10-E03 | Event replay, strategy runner, WFO, distributed research | I10-E01-F01-S1 to I10-E03-F04-S2 |
-| Monitoring, Security, DevOps | I10 Institutional Analytics Platform | I10-E04 to I10-E06 | Observability, RBAC, audit, GitHub Actions, Docker, testing | I10-E04-F01-S1 to I10-E06-F04-S2 |
+| Monitoring, Security, DevOps | I10 Institutional Analytics Platform | I10-E04 to I10-E06 | Observability, RBAC, audit, GitHub Actions, optional container readiness, testing | I10-E04-F01-S1 to I10-E06-F04-S2 |
 
 ## Validation
 

@@ -14,7 +14,7 @@ Source Documents: 4823_Technical Analysis.pdf; Everything_you_need_to_know_about
 
 Architecture Components: Mapped architecture component
 
-Task Objective: Complete implementation task for I10-E06-F02-S2: Document Docker baseline.
+Task Objective: Complete implementation task for I10-E06-F02-S2: Document Optional container readiness baseline.
 
 Acceptance Criteria:
 

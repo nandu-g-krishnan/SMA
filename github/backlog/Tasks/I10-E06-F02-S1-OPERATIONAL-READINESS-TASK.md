@@ -14,7 +14,7 @@ Source Documents: rf-v2017-n4-1-pdf.pdf; ssrn-3138630.pdf; ssrn-3247865.pdf
 
 Architecture Components: Mapped architecture component
 
-Task Objective: Complete operational readiness task for I10-E06-F02-S1: Backtest Docker baseline.
+Task Objective: Complete operational readiness task for I10-E06-F02-S1: Backtest Optional container readiness baseline.
 
 Acceptance Criteria:
 

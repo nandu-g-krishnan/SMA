@@ -243,6 +243,6 @@ id,epic_id,initiative_id,title,source_refs
 "I10-E05-F03","I10-E05","I10","Audit export","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
 "I10-E05-F04","I10-E05","I10","Compliance checklist","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
 "I10-E06-F01","I10-E06","I10","GitHub Actions","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
-"I10-E06-F02","I10-E06","I10","Docker baseline","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
+"I10-E06-F02","I10-E06","I10","Optional container readiness baseline","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
 "I10-E06-F03","I10-E06","I10","Test pyramid","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"
 "I10-E06-F04","I10-E06","I10","Release checklist","4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf"

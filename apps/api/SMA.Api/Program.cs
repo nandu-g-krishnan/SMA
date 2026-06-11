@@ -66,8 +66,20 @@ app.MapGet("/api/foundation/configuration", (IConfiguration configuration) => Re
         "SignalR",
         "Python FastAPI",
         "Kite Connect",
-        "Docker",
         "GitHub Actions"
+    },
+    optionalInfrastructure = new[]
+    {
+        "Docker",
+        "Docker Compose",
+        "PostgreSQL native service for local persistence stories",
+        "Redis native service for cache/realtime-state stories"
+    },
+    localMvpMode = new
+    {
+        optionalInfrastructureRequired = false,
+        mockDataAllowed = true,
+        liveKiteCredentialsRequired = false
     },
     gates = new
     {

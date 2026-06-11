@@ -27694,19 +27694,19 @@ Total stories: 650
 
 **Monitoring Requirements:** Success/failure counters, latency histogram, freshness gauge, structured logs, trace IDs, alert thresholds.
 
-## I10-E06-F02-S1: Backtest Docker baseline
+## I10-E06-F02-S1: Backtest Optional container readiness baseline
 
 **Initiative:** Institutional Analytics Platform
 
 **Epic:** DevOps and testing
 
-**Feature:** Docker baseline
+**Feature:** Optional container readiness baseline
 
 **Phase:** MVP
 
 **Story Points:** 3
 
-**Description:** Implement backtest docker baseline as part of Docker baseline, with full traceability to the reference corpus and platform architecture.
+**Description:** Implement backtest optional container readiness baseline as part of Optional container readiness baseline, with full traceability to the reference corpus and platform architecture.
 
 **Business Value:** Enables a concrete institutional trading-platform capability required by research, trading, risk, execution, or operations.
 
@@ -27718,7 +27718,7 @@ Total stories: 650
 
 **Acceptance Criteria:**
 
-- Given valid source data and authorized access, When backtest docker baseline is executed, Then the platform persists the expected result with source references and calculation trace.
+- Given valid source data and authorized access, When backtest optional container readiness baseline is executed, Then the platform persists the expected result with source references and calculation trace.
 - Given missing, stale, or invalid input data, When validation runs, Then the workflow fails safely with field-level errors and no unsafe downstream action.
 - Given the workflow completes, When the API or dashboard is queried, Then the user can see the result, status, timestamp, and source trace.
 - Given monitoring is enabled, When the workflow succeeds or fails, Then metrics, logs, and audit records are emitted with a correlation ID.
@@ -27737,19 +27737,19 @@ Total stories: 650
 
 **Monitoring Requirements:** Success/failure counters, latency histogram, freshness gauge, structured logs, trace IDs, alert thresholds.
 
-## I10-E06-F02-S2: Document Docker baseline
+## I10-E06-F02-S2: Document Optional container readiness baseline
 
 **Initiative:** Institutional Analytics Platform
 
 **Epic:** DevOps and testing
 
-**Feature:** Docker baseline
+**Feature:** Optional container readiness baseline
 
 **Phase:** MVP
 
 **Story Points:** 5
 
-**Description:** Implement document docker baseline as part of Docker baseline, with full traceability to the reference corpus and platform architecture.
+**Description:** Implement document optional container readiness baseline as part of Optional container readiness baseline, with full traceability to the reference corpus and platform architecture.
 
 **Business Value:** Enables a concrete institutional trading-platform capability required by research, trading, risk, execution, or operations.
 
@@ -27761,7 +27761,7 @@ Total stories: 650
 
 **Acceptance Criteria:**
 
-- Given valid source data and authorized access, When document docker baseline is executed, Then the platform persists the expected result with source references and calculation trace.
+- Given valid source data and authorized access, When document optional container readiness baseline is executed, Then the platform persists the expected result with source references and calculation trace.
 - Given missing, stale, or invalid input data, When validation runs, Then the workflow fails safely with field-level errors and no unsafe downstream action.
 - Given the workflow completes, When the API or dashboard is queried, Then the user can see the result, status, timestamp, and source trace.
 - Given monitoring is enabled, When the workflow succeeds or fails, Then metrics, logs, and audit records are emitted with a correlation ID.

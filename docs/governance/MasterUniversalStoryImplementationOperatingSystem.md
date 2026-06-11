@@ -287,10 +287,12 @@ Include:
 
 ## Step 10: Knowledge Validation
 
-Generate:
+Update centralized evidence in:
 
 ```text
-docs/validation/StoryKnowledgeValidationReport.md
+StoryRegistry.md
+StoryExecutionDashboard.md
+docs/validation/StoryTraceabilityReport.md
 ```
 
 Verify:
@@ -360,7 +362,7 @@ Attempt:
 .NET Build
 Angular Build
 Python Build
-Docker Build
+Optional container build only when the selected story explicitly changes container packaging
 Database Validation
 ```
 
@@ -383,10 +385,13 @@ Never assume success.
 Run:
 
 ```text
-Unit Tests
 Integration Tests
-Contract Tests
-Regression Tests
+End-to-End Flow Validation
+Business Rule Validation
+Risk Validation
+Data Quality Validation
+Kite Integration Validation when applicable
+Unit Tests when required by story risk
 ```
 
 If unable, generate:
@@ -395,14 +400,15 @@ If unable, generate:
 docs/validation/ManualTestChecklist.md
 ```
 
-During MVP, unit tests are P2 only for non-trading foundation stories when build, smoke, manual, audit, security, acceptance, and traceability evidence exists. Unit tests remain P0 for Kite authentication/session handling, market-data ingestion, candle aggregation, data quality logic, Feature Store calculations, indicators, signals, strategies, risk controls, execution controls, capital protection, and AI governance logic.
+Unit tests are P1. They are recommended, but they are not the primary success criterion for SMA. Integration validation, business validation, trading-flow validation, risk validation, data-quality validation, and Kite integration validation have priority because SMA is a trading system.
 
 ## Step 15: Audit
 
-Generate:
+Update cumulative audit evidence in:
 
 ```text
 docs/validation/StoryAuditReport.md
+StoryRegistry.md
 ```
 
 Validate:
@@ -418,10 +424,11 @@ Result must be PASS or FAIL.
 
 ## Step 16: Security
 
-Generate:
+Update cumulative security evidence in:
 
 ```text
 docs/validation/StorySecurityReport.md
+StoryRegistry.md
 ```
 
 Run:
@@ -443,10 +450,11 @@ Story fails if:
 
 ## Step 17: Acceptance
 
-Generate:
+Update cumulative acceptance evidence in:
 
 ```text
 docs/validation/StoryAcceptanceReport.md
+StoryRegistry.md
 ```
 
 Validate:
@@ -463,10 +471,12 @@ Result must be PASS or FAIL.
 
 ## Step 18: Traceability
 
-Generate:
+Update cumulative traceability evidence in:
 
 ```text
 docs/validation/StoryTraceabilityReport.md
+StoryRegistry.md
+docs/traceability/ImplementationTraceabilityMatrix.md
 ```
 
 Verify:
@@ -488,10 +498,11 @@ Result must be PASS or FAIL.
 
 ## Step 18A: Engineering Standards Compliance
 
-Generate or update:
+Update cumulative engineering standards evidence in:
 
 ```text
 docs/validation/EngineeringStandardsComplianceReport.md
+StoryRegistry.md
 ```
 
 Validate:
@@ -521,6 +532,8 @@ BacklogCoverageReport.md
 
 Update story status, progress, evidence links, and validation results.
 
+Do not create per-story validation documents unless a gate failure requires a focused remediation artifact.
+
 ## Step 20: Story Closure Validation
 
 Story may close only if:
@@ -528,7 +541,9 @@ Story may close only if:
 - Knowledge Validation PASS
 - Implementation PASS
 - Build PASS
-- Tests PASS
+- Integration Validation PASS
+- Business Validation PASS
+- Risk Validation PASS
 - Engineering Standards Compliance PASS
 - Audit PASS
 - Security PASS
@@ -536,10 +551,11 @@ Story may close only if:
 - Traceability PASS
 - Documentation Updated
 - ImplementationTraceabilityMatrix Updated
+- StoryRegistry Updated
 - No Critical Vulnerabilities
 - No High Vulnerabilities
 
-For non-trading foundation stories during MVP, deferred unit tests are allowed only when `ManualTestChecklist.md` documents exact checks and expected results. This exception does not apply to Kite, market data, candle aggregation, data quality, Feature Store, indicators, signals, strategies, risk, execution, capital protection, or AI governance stories.
+Unit tests are recommended but are not the primary success criterion. For critical trading flows, integration tests, scenario tests, historical validation, and paper-trading validation take priority.
 
 ## Step 21: Local Closure
 
@@ -625,7 +641,9 @@ Knowledge
 -> Knowledge Validation
 -> Implementation
 -> Build
--> Test
+-> Integration Validation
+-> Business Validation
+-> Risk Validation
 -> Audit
 -> Security
 -> Acceptance
@@ -641,6 +659,8 @@ No step may be skipped.
 Implementation is not completion.
 
 Validated, tested, secure, audited, traceable completion is completion.
+
+Do not generate excessive story-level documentation. Maintain centralized validation artifacts and single-source-of-truth registries wherever possible.
 
 ## Additional P0 Rules
 

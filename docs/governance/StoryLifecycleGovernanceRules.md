@@ -26,8 +26,8 @@ GitHub Issues and GitHub Project V2 are execution views generated from, or synch
 
 Required columns:
 
-| Story Id | KnowledgeIds | Epic | Feature | GitHub Issue | Local Story File | Status | Implementation Status | Audit Status | Security Status | Acceptance Status | Closure Status |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Story Id | KnowledgeIds | Epic | Feature | GitHub Issue | Local Story File | Status | Implementation Result | Audit Result | Security Result | Acceptance Result | Traceability Result | Commit Hash | Closure Date | Closure Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 Every story must exist locally even when a matching GitHub issue exists.
 
@@ -67,7 +67,7 @@ After implementation, run:
 - Documentation Review
 - Testing Review
 
-Generate `docs/validation/StoryAuditReport.md`.
+Update the cumulative `docs/validation/StoryAuditReport.md` entry and `github/backlog/StoryRegistry.md`.
 
 ## Mandatory Security Stage
 
@@ -82,7 +82,7 @@ After audit, run:
 - API Security Review
 - Input Validation Review
 
-Generate `docs/validation/StorySecurityReport.md`.
+Update the cumulative `docs/validation/StorySecurityReport.md` entry and `github/backlog/StoryRegistry.md`.
 
 ## Mandatory Acceptance Stage
 
@@ -94,9 +94,12 @@ Validate:
 - PDF Compliance
 - Kite Documentation Compliance
 - Architecture Compliance
-- Testing Compliance
+- Integration Validation
+- Business Validation
+- Risk Validation
+- Testing Compliance where applicable
 
-Generate `docs/validation/StoryAcceptanceReport.md`.
+Update the cumulative `docs/validation/StoryAcceptanceReport.md` entry and `github/backlog/StoryRegistry.md`.
 
 ## Mandatory Traceability Stage
 
@@ -114,7 +117,7 @@ Verify these mappings exist and are correct:
 - UI Component
 - Test
 
-Generate `docs/validation/StoryTraceabilityReport.md`.
+Update the cumulative `docs/validation/StoryTraceabilityReport.md` entry, `github/backlog/StoryRegistry.md`, and `docs/traceability/ImplementationTraceabilityMatrix.md`.
 
 ## Closure Rule
 
@@ -124,11 +127,16 @@ A story may be closed only if:
 - `StorySecurityReport.md` = PASS
 - `StoryAcceptanceReport.md` = PASS
 - `StoryTraceabilityReport.md` = PASS
-- All tests PASS
+- Integration Validation PASS
+- Business Validation PASS
+- Risk Validation PASS
 - No Critical Vulnerabilities
 - No High Vulnerabilities
-- Documentation Updated
+- Documentation Updated if impacted
 - `ImplementationTraceabilityMatrix.md` Updated
+- `StoryRegistry.md` Updated
+
+Unit tests are recommended, but the primary closure criteria are system validation, business validation, trading validation, risk validation, security, acceptance, and traceability.
 
 ## GitHub Closure Rule
 
@@ -164,6 +172,8 @@ A story may not be closed if any of these conditions exist:
 Codex must enforce this workflow for every implementation story.
 
 Implementation requires audit, security validation, acceptance validation, and traceability validation before closure.
+
+Do not create separate per-story validation documents for every story. Maintain centralized validation artifacts and record story-level evidence in the registry, dashboard, metrics, and traceability matrices.
 
 ## Final Rule
 

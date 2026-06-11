@@ -208,7 +208,8 @@ foreach ($relativePath in $requiredFiles) {
 
     foreach ($rule in @(
       "Modular Monolith Rule",
-      "MVP Testing Priority Rule",
+      "Testing Priority Order",
+      "Centralized Validation Model",
       "Mock Data Rule",
       "Kite Integration Standards",
       "Engineering Compliance Gate"
@@ -267,6 +268,9 @@ foreach ($relativePath in $requiredFiles) {
       "Audit Status",
       "Security Status",
       "Acceptance Status",
+      "Traceability Result",
+      "Commit Hash",
+      "Closure Date",
       "Closure Status"
     )) {
       if ($content -notmatch [regex]::Escape($column)) {

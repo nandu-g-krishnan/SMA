@@ -18,8 +18,20 @@ This report activates the mandatory engineering standards gate for SMA implement
 | Modular monolith preserved | PASS | Module boundary rule defined |
 | Master knowledge source protected | PASS | Master data and traceability remain authoritative |
 | Mock data allowed before Kite credentials | PASS | Mock Data Rule defined |
-| Unit-test priority adjusted for MVP | PASS | P0/P2 testing split defined without removing validation evidence |
+| Testing priority revised for trading-system validation | PASS | P0 integration, end-to-end, business, risk, data-quality, and Kite validation; unit tests are P1 |
 | Live trading blocked by capital protection | PASS | Trading Safety Rules |
+| Optional infrastructure removed from local MVP runtime | PASS | `run-local.bat` starts API and UI natively without Docker, PostgreSQL, Redis, or live Kite credentials |
+| API target stack excludes optional infrastructure | PASS | `/api/foundation/configuration` separates mandatory stack from optional infrastructure |
+| Backlog Docker-baseline wording removed | PASS | Local backlog now uses optional container readiness wording |
+| Centralized validation model active | PASS | Cumulative validation reports and `StoryRegistry.md` are authoritative; no per-story validation document explosion |
+
+## Build Evidence
+
+| Command | Status | Evidence |
+| --- | --- | --- |
+| `powershell -ExecutionPolicy Bypass -File automation\validate-traceability.ps1` | PASS | Traceability gate passed |
+| `dotnet build SMA.sln` | PASS | `SMA.Api -> apps\api\SMA.Api\bin\Debug\net10.0\SMA.Api.dll`; 0 warnings, 0 errors |
+| `cmd /c npm run build` from `apps\web` | PASS | Angular build completed; output `apps\web\dist\sma-web` |
 
 ## Story Closure Gate
 

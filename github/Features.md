@@ -1952,7 +1952,7 @@
 
 **Source References:** 4823_Technical Analysis.pdf; Everything_you_need_to_know_about_investing-Advanced_series_eBook.pdf; Idenitfying-Chart-Patterns.pdf
 
-## I10-E06-F02: Docker baseline
+## I10-E06-F02: Optional container readiness baseline
 
 **Initiative:** Institutional Analytics Platform
 
